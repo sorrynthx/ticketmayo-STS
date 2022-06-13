@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+	<!-- HEAD -->
+	<th:block th:replace="fragments/common/head :: headFragment"></th:block>
+	
+	<!--begin::Body-->
+	<body id="kt_app_body" 
+		data-kt-app-layout="light-sidebar" 
+		data-kt-app-sidebar-fixed="true" 
+		data-kt-app-sidebar-push-header="true" 
+		data-kt-app-sidebar-push-toolbar="true" 
+		data-kt-app-sidebar-push-footer="true" 
+		class="app-default"
+	>
+		
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root" id="kt_app_root">
+			
+			
+			<div class="d-flex flex-column flex-column-fluid">
+				<!--begin::Content-->
+				<div class="d-flex flex-row-fluid flex-column flex-column-fluid text-center p-10 py-lg-20">
+					<!--begin::Logo-->
+					<a href="javascript:void(0);" class="pt-lg-20 mb-12">
+						<!-- <img alt="Logo" src="/assets/media/logos/default.svg" class="h-40px"> -->
+					</a>
+					
+					<!--end::Logo-->
+					<!--begin::Logo-->
+					<h1 class="fw-bolder fs-2qx text-gray-800 mb-7">접수완료!</h1>
+					<!--end::Logo-->
+					<!--begin::Message-->
+					<div class="fw-bold fs-3 text-muted mb-15">담당자가 계좌이체 확인 후 입력하신 번호로 
+					<br>연락드리겠습니다.</div>
+					<!--end::Message-->
+					<!--begin::Action-->
+					<div class="text-center">
+						<a href="/secondTicket" class="btn btn-lg btn-primary fw-bolder">양도티켓 판매 목록으로</a>
+					</div>
+					<!--end::Action-->
+				</div>
+				<!--end::Content-->
+				<!--begin::Illustration-->
+				<div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-150px min-h-lg-350px" style="background-image: url(/assets/media/illustrations/sketchy-1/7.png)"></div>
+				<!--end::Illustration-->
+			</div>
+			
+			
+		</div>
+		<!--end::Root-->
+		
+		<!-- COMMON SCRIPTS -->
+		<th:block th:replace="fragments/common/scripts :: scriptsFragment"></th:block>
+		
+	</body>
+	<!--end::Body-->
+</html>

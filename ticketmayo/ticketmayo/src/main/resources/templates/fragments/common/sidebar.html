@@ -17,31 +17,6 @@
 			<!--end::Logo-->
 			<div class="separator d-none d-lg-block"></div>
 			
-			
-			<div class="app-sidebar-toolbar d-flex flex-stack py-6 px-8">
-							<!--begin::Select-->
-							<select class="form-select form-select-custom fw-bolder select2-hidden-accessible" data-control="select2" data-placeholder="Select Project" data-hide-search="true" data-select2-id="select2-data-7-e5kd" tabindex="-1" aria-hidden="true">
-								<option value="1" selected="selected" data-select2-id="select2-data-9-higk">Select Project</option>
-								<option value="2">Good CRM App</option>
-								<option value="3">Oppo Booking Site</option>
-								<option value="4">FinOptima SaaS</option>
-								<option value="5">Degree Mobile App</option>
-							</select>
-							<!--end::Select-->
-							<!--begin::Button-->
-							<a href="#" class="btn btn-icon btn-custom fw-bolder flex-shrink-0 ms-3" data-bs-toggle="modal" data-bs-target="#kt_modal_create_project">
-								<!--begin::Svg Icon | path: icons/duotune/arrows/arr087.svg-->
-								<span class="svg-icon svg-icon-2qx">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<rect opacity="0.5" x="11" y="18" width="12" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor"></rect>
-										<rect x="6" y="11" width="12" height="2" rx="1" fill="currentColor"></rect>
-									</svg>
-								</span>
-								<!--end::Svg Icon-->
-							</a>
-							<!--end::Button-->
-						</div>
-			
 			<div class="separator"></div>
 			
 			<!--begin::Sidebar menu-->
@@ -65,7 +40,7 @@
 						</span>
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
-								<a class="menu-link active" href="javascript:void(0);">
+								<a class="menu-link" href="/openWait">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
@@ -73,11 +48,11 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a class="menu-link" href="javascript:void(0);">
+								<a class="menu-link" href="/secondTicket">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">양도티켓 구매</span>
+									<span class="menu-title">양도티켓 판매</span>
 								</a>
 							</div>
 							<div class="menu-item">
@@ -89,11 +64,11 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a class="menu-link" href="javascript:void(0);">
+								<a class="menu-link" href="/faq">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">자주찾는 질문</span>
+									<span class="menu-title">자주찾는질문</span>
 								</a>
 							</div>
 						</div>
@@ -108,7 +83,7 @@
 				<!--begin::Info-->
 				<div class="me-2">
 					<!--begin::Username-->
-					<a href="javascript:void(0);" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-bold lh-0">게스트</a>
+					<a href="javascript:void(0);" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-bold lh-0">손님</a>
 					<!--end::Username-->
 					<!--begin::Description-->
 					<span class="app-sidebar-deckription text-gray-400 fw-bold d-block fs-8">회원 서비스 준비중</span>
@@ -133,6 +108,45 @@
 			<!--end::User-->
 		</div>
 		<!--end::sidebar-->
-			
+		
+		<!-- script -->
+	    <script type="text/javascript">
+	    	if (typeof jQuery == 'undefined') {
+	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
+	      	} 
+	    
+	    	/* active link url */
+			const url = window.location.pathname;	   		
+	   		
+	   		$('.menu-link').each(function () {
+	   	   		var currUrl = $(this).attr('href');
+	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
+	   	   	});
+	   		
+	   		/* top title description */
+	   		switch (url) {
+		    case '/openWait' :
+		      	$('#topTitle').text('오픈예정 티켓');
+		      	$('#topDescription').text('이번 주 오픈 티켓 확인!');
+		      	break;
+		    case '/secondTicket' :
+		    	$('#topTitle').text('양도티켓 판매');
+			  	$('#topDescription').text('양도된 티켓을 빠르게 구매!');
+		      break;
+		    case '/secondTicketPayment' :
+		    	$('#topTitle').text('양도티켓 구매');
+			  	$('#topDescription').text('양도티켓 구매 진행중...');
+		      break; 
+		    case '/faq' :
+		    	$('#topTitle').text('자주 찾는 질문');
+			  	$('#topDescription').text('많이 물어보는 질문!');
+		      break;
+		    default :
+		      break;
+		  	}
+	   		
+	    </script>
+		
 	</th:block>
+	
 </html>

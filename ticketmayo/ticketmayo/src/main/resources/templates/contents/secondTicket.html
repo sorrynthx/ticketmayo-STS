@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<th:block th:fragment="secondTicketFragment">
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container container-fluid">
+			
+			<!--begin::Layout-->
+			<div class="d-flex flex-column flex-lg-row">
+				<!--begin::Content-->
+				<div class="flex-lg-row-fluid me-lg-15 order-2 order-lg-1 mb-10 mb-lg-0">
+					<!--begin::Form-->
+					<form class="form" action="#" id="kt_subscriptions_create_new">
+						<!--begin::Payment method-->
+						<div class="card card-flush pt-3 mb-5 mb-lg-10" data-kt-subscriptions-form="pricing">
+							<!--begin::Card header-->
+							<div class="card-header">
+								<!--begin::Card title-->
+								<div class="card-title">
+									<h2 class="fw-bolder">양도된 티켓</h2>
+								</div>
+								<!--begin::Card title-->
+							</div>
+							<!--end::Card header-->
+							<!--begin::Card body-->
+							<div class="card-body pt-0">
+								<!--begin::Options-->
+								<div id="kt_create_new_payment_method">
+									<!--begin::Option-->
+									<div class="py-1">
+										<!--begin::Header-->
+										<div class="py-3 d-flex flex-stack flex-wrap">
+											<!--begin::Toggle-->
+											<div class="d-flex align-items-center collapsible toggle collapsed" data-bs-toggle="collapse" data-bs-target="#kt_create_new_payment_method_1" aria-expanded="true">
+												<!--begin::Arrow-->
+												<div class="btn btn-sm btn-icon btn-active-color-primary ms-n3 me-2">
+													<!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
+													<span class="svg-icon toggle-on svg-icon-primary svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+													<!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
+													<span class="svg-icon toggle-off svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
+															<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+												</div>
+												<!--end::Arrow-->
+												<!--begin::Logo-->
+												<img src="https://ticketimage.interpark.com/Play/image/large/22/22000970_p.gif" class="w-40px me-3" alt="">
+												<!--end::Logo-->
+												<!--begin::Summary-->
+												<div class="me-3">
+													<div class="d-flex align-items-center fw-bolder">뮤지컬 데스노트 (Death Note)
+													<div class="badge badge-light-primary ms-5">판매중</div></div>
+													<div class="text-muted">2022.06.26</div>
+												</div>
+												<!--end::Summary-->
+											</div>
+											<!--end::Toggle-->
+											<!--begin::Input-->
+											<div class="d-flex my-3 ms-9">
+												<!--begin::Radio-->
+												<label class="form-check form-check-custom form-check-solid me-5">
+													<a href="/secondTicketPayment" class="btn btn-light-primary btn-sm">구매</a>
+												</label>
+												<!--end::Radio-->
+											</div>
+											<!--end::Input-->
+										</div>
+										<!--end::Header-->
+										<!--begin::Body-->
+										<div id="kt_create_new_payment_method_1" class="fs-6 ps-10 collapse" style="">
+											<!--begin::Details-->
+											<div class="d-flex flex-wrap py-5">
+												<!--begin::Col-->
+												<div class="flex-equal me-5">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보1</td>
+															<td class="text-gray-800">VIP</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보2</td>
+															<td class="text-gray-800">1층 A블럭 3열 12번</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">날짜</td>
+															<td class="text-gray-800">2022.06.26</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">시간</td>
+															<td class="text-gray-800">19:30</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">가격</td>
+															<td class="text-gray-800">200,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">장소</td>
+															<td class="text-gray-800">충무아트센터 대극장</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="flex-equal">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">수량</td>
+															<td class="text-gray-800">1</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">배송비</td>
+															<td class="text-gray-800">3,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">입금</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">계좌이체</a>
+															</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">양도자</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">sor****@naver.com</a>
+															</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+											</div>
+											<!--end::Details-->
+										</div>
+										<!--end::Body-->
+									</div>
+									<!--end::Option-->
+									<div class="separator separator-dashed"></div>
+									
+									<!--begin::Option-->
+									<div class="py-1">
+										<!--begin::Header-->
+										<div class="py-3 d-flex flex-stack flex-wrap">
+											<!--begin::Toggle-->
+											<div class="d-flex align-items-center collapsible toggle collapsed" data-bs-toggle="collapse" data-bs-target="#kt_create_new_payment_method_2" aria-expanded="true">
+												<!--begin::Arrow-->
+												<div class="btn btn-sm btn-icon btn-active-color-primary ms-n3 me-2">
+													<!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
+													<span class="svg-icon toggle-on svg-icon-primary svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+													<!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
+													<span class="svg-icon toggle-off svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
+															<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+												</div>
+												<!--end::Arrow-->
+												<!--begin::Logo-->
+												<img src="https://ticketimage.interpark.com/Play/image/large/22/22000970_p.gif" class="w-40px me-3" alt="">
+												<!--end::Logo-->
+												<!--begin::Summary-->
+												<div class="me-3">
+													<div class="d-flex align-items-center fw-bolder">뮤지컬 데스노트 (Death Note)
+													<div class="badge badge-light-primary ms-5">판매중</div></div>
+													<div class="text-muted">2022.06.26</div>
+												</div>
+												<!--end::Summary-->
+											</div>
+											<!--end::Toggle-->
+											<!--begin::Input-->
+											<div class="d-flex my-3 ms-9">
+												<!--begin::Radio-->
+												<label class="form-check form-check-custom form-check-solid me-5">
+													<a href="/secondTicketPayment" class="btn btn-light-primary btn-sm">구매</a>
+												</label>
+												<!--end::Radio-->
+											</div>
+											<!--end::Input-->
+										</div>
+										<!--end::Header-->
+										<!--begin::Body-->
+										<div id="kt_create_new_payment_method_2" class="fs-6 ps-10 collapse" style="">
+											<!--begin::Details-->
+											<div class="d-flex flex-wrap py-5">
+												<!--begin::Col-->
+												<div class="flex-equal me-5">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보1</td>
+															<td class="text-gray-800">VIP</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보2</td>
+															<td class="text-gray-800">1층 A블럭 3열 12번</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">날짜</td>
+															<td class="text-gray-800">2022.06.26</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">시간</td>
+															<td class="text-gray-800">19:30</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">가격</td>
+															<td class="text-gray-800">200,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">장소</td>
+															<td class="text-gray-800">충무아트센터 대극장</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="flex-equal">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">수량</td>
+															<td class="text-gray-800">1</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">배송비</td>
+															<td class="text-gray-800">3,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">입금</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">계좌이체</a>
+															</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">양도자</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">sor****@naver.com</a>
+															</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+											</div>
+											<!--end::Details-->
+										</div>
+										<!--end::Body-->
+									</div>
+									<!--end::Option-->
+									
+									<!--begin::Option-->
+									<div class="separator separator-dashed"></div>
+									
+									<!--begin::Option-->
+									<!--begin::Option-->
+									<div class="py-1">
+										<!--begin::Header-->
+										<div class="py-3 d-flex flex-stack flex-wrap">
+											<!--begin::Toggle-->
+											<div class="d-flex align-items-center collapsible toggle collapsed" data-bs-toggle="collapse" data-bs-target="#kt_create_new_payment_method_3" aria-expanded="true">
+												<!--begin::Arrow-->
+												<div class="btn btn-sm btn-icon btn-active-color-primary ms-n3 me-2">
+													<!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
+													<span class="svg-icon toggle-on svg-icon-primary svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+													<!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
+													<span class="svg-icon toggle-off svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>
+															<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>
+															<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+												</div>
+												<!--end::Arrow-->
+												<!--begin::Logo-->
+												<img src="https://ticketimage.interpark.com/Play/image/large/22/22000970_p.gif" class="w-40px me-3" alt="">
+												<!--end::Logo-->
+												<!--begin::Summary-->
+												<div class="me-3">
+													<div class="d-flex align-items-center fw-bolder">뮤지컬 데스노트 (Death Note)
+													<div class="badge badge-light-danger ms-5">판매완료</div></div>
+													<div class="text-muted">2022.06.26</div>
+												</div>
+												<!--end::Summary-->
+											</div>
+											<!--end::Toggle-->
+											
+										</div>
+										<!--end::Header-->
+										<!--begin::Body-->
+										<div id="kt_create_new_payment_method_3" class="fs-6 ps-10 collapse" style="">
+											<!--begin::Details-->
+											<div class="d-flex flex-wrap py-5">
+												<!--begin::Col-->
+												<div class="flex-equal me-5">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보1</td>
+															<td class="text-gray-800">VIP</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">좌석정보2</td>
+															<td class="text-gray-800">1층 A블럭 3열 12번</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">날짜</td>
+															<td class="text-gray-800">2022.06.26</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">시간</td>
+															<td class="text-gray-800">19:30</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">가격</td>
+															<td class="text-gray-800">200,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">장소</td>
+															<td class="text-gray-800">충무아트센터 대극장</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+												<!--begin::Col-->
+												<div class="flex-equal">
+													<table class="table table-flush fw-bold gy-1">
+														<tbody><tr>
+															<td class="text-muted min-w-125px w-125px">수량</td>
+															<td class="text-gray-800">1</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">배송비</td>
+															<td class="text-gray-800">3,000원</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">입금</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">계좌이체</a>
+															</td>
+														</tr>
+														<tr>
+															<td class="text-muted min-w-125px w-125px">양도자</td>
+															<td class="text-gray-800">
+																<a href="#" class="text-gray-900 text-hover-primary">sor****@naver.com</a>
+															</td>
+														</tr>
+													</tbody></table>
+												</div>
+												<!--end::Col-->
+											</div>
+											<!--end::Details-->
+										</div>
+										<!--end::Body-->
+									</div>
+									<!--end::Option-->
+								</div>
+								<!--end::Options-->
+							</div>
+							<!--end::Card body-->
+						</div>
+						<!--end::Payment method-->
+						<!--begin::Card-->
+						
+						<!--end::Card-->
+					</form>
+					<!--end::Form-->
+				</div>
+				<!--end::Content-->
+				
+				<div class="flex-column flex-lg-row-auto w-100 w-lg-250px w-xl-300px mb-10 order-1 order-lg-2">
+					<!--begin::Card-->
+					<div class="card card-flush pt-3 mb-0" data-kt-sticky="true" data-kt-sticky-name="subscription-summary" data-kt-sticky-offset="{default: false, lg: '200px'}" data-kt-sticky-width="{lg: '250px', xl: '300px'}" data-kt-sticky-left="auto" data-kt-sticky-top="150px" data-kt-sticky-animation="false" data-kt-sticky-zindex="95" style="">
+						<!--begin::Card header-->
+						<div class="card-header">
+							<!--begin::Card title-->
+							<div class="card-title">
+								<h2>도움말</h2>
+							</div>
+							<!--end::Card title-->
+						</div>
+						<!--end::Card header-->
+						<!--begin::Card body-->
+						<div class="card-body pt-0 fs-6">
+							<!--begin::Section-->
+							<div class="mb-7">
+								<!--begin::Title-->
+								<h5 class="mb-3">구매 관련 문의</h5>
+								<!--end::Title-->
+								<!--begin::Details-->
+								<div class="d-flex align-items-center mb-1">
+									<!--begin::Name-->
+									<a href="javascript:void(0);" class="fw-bolder text-gray-800 text-hover-primary me-2">티켓마요 관리자</a>
+									<!--end::Name-->
+									<!--begin::Status-->
+									<span class="badge badge-light-success">관리자</span>
+									<!--end::Status-->
+								</div>
+								<!--end::Details-->
+								<!--begin::Email-->
+								<a href="javascript:void(0);" class="fw-bold text-gray-600 text-hover-primary">dreammonsterkr@gmail.com</a>
+								<!--end::Email-->
+								
+								
+							</div>
+							<!--end::Section-->
+							<!--begin::Seperator-->
+							<div class="separator separator-dashed mb-7"></div>
+							<!--end::Seperator-->
+							
+							<div class="mb-0">
+								<a href="https://stellar-guppy-450.notion.site/b11002e285fe4cc7ba6ee5a3f75dfdaa" target="_blank" class="btn btn-primary" id="kt_subscriptions_create_button">
+									<!--begin::Indicator-->
+									<span class="indicator-label">구매 절차 확인</span>
+									<span class="indicator-progress">기다려주세요...
+									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+									<!--end::Indicator-->
+								</a>
+							</div>
+							
+						</div>
+						<!--end::Card body-->
+					</div>
+					<!--end::Card-->
+				</div>
+				
+			</div>
+			<!--end::Layout-->
+			
+			
+		</div>
+		 
+	</th:block>
+</html>
