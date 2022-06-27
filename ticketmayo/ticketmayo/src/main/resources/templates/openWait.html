@@ -58,4 +58,11 @@
 		
 	</body>
 	<!--end::Body-->
+	<script>
+	$(document).ready(function(){
+		ajaxCall4Json('/openWait/api_v1_001', null, 'get' ,function(result){
+			console.log(result);
+		});
+	})
+	</script>
 </html>
