@@ -1,4 +1,4 @@
-package com.dreammonster.ticketmayo.openWait;
+package com.dreammonster.ticketmayo.web.controller;
 
 import java.util.List;
 
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dreammonster.ticketmayo.service.OpenWaitService;
+import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -21,11 +24,6 @@ import lombok.RequiredArgsConstructor;
 public class OpenWaitController {
 	
 	private final OpenWaitService openWaitService;
-	
-	@Autowired
-	public OpenWaitController(OpenWaitService openWaitService) {
-		this.openWaitService = openWaitService;
-	}
 	
 	@GetMapping("/openWait")
 	public String openWait() {
@@ -35,10 +33,10 @@ public class OpenWaitController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/openWait/api_v1_001", method = RequestMethod.GET)
-	public List<OpenWaitDomain> openWait_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
+	public List<OpenWaitResponseDto> openWait_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
 		
 		// api call
-		List<OpenWaitDomain> list = openWaitService.list();
+		List<OpenWaitResponseDto> list = openWaitService.list();
 
 		return list;
 		

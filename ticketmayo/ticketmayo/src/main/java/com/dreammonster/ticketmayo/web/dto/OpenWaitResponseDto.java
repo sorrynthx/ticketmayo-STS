@@ -1,9 +1,9 @@
-package com.dreammonster.ticketmayo.openWait;
+package com.dreammonster.ticketmayo.web.dto;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
-public class OpenWaitDomain {
+@Getter
+public class OpenWaitResponseDto {
 	
 	private String type;
 	private String subject;
