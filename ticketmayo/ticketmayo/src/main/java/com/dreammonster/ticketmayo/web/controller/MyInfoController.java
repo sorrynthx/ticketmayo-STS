@@ -23,33 +23,14 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class OpenWaitController {
+public class MyInfoController {
 	
-	private final OpenWaitService openWaitService;
+	//private final OpenWaitService openWaitService;
 	
-	@GetMapping("/openWait")
-	public String openWait() {
+	@GetMapping("/myInfo")
+	public String myInfo() {
 		
-		return "openWait";
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/openWait/api_v1_001", method = RequestMethod.GET)
-	public List<OpenWaitResponseDto> openWait_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
-		
-		// api call
-		List<OpenWaitResponseDto> list = openWaitService.list();
-
-		return list;
-		
-	}
-	
-	@PostMapping("/openWaitBuyMusical")
-	public String openWaitBuyMusical(@RequestParam String subject, @RequestParam String site, Model model) {
-		
-		model.addAttribute("subject", subject);
-		model.addAttribute("site", site);
-		return "openWaitBuy";
+		return "myInfo";
 	}
 	
 }

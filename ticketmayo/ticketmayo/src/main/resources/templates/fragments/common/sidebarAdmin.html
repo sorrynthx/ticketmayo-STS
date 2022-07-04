@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<th:block th:fragment="sidebarFragment">
+	<th:block th:fragment="sidebarAdminFragment">
 		
 		<!--begin::sidebar-->
 		<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
@@ -9,7 +9,7 @@
 			<div class="app-sidebar-logo d-none d-lg-flex flex-stack flex-shrink-0 px-8" id="kt_app_sidebar_logo">
 				<!--begin::Logo image-->
 				<a href="#">
-					TicketMayo
+					TicketMayo Admin
 				</a>
 				<!--end::Logo image-->
 
@@ -40,7 +40,7 @@
 						</span>
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
-								<a class="menu-link" href="/openWait">
+								<a class="menu-link" href="/openWaitAdmin">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
@@ -151,10 +151,6 @@
 		    case '/faq' :
 		    	$('#topTitle').text('자주 찾는 질문');
 			  	$('#topDescription').text('많이 물어보는 질문!');
-		      break;
-		    case '/myInfo' :
-		    	$('#topTitle').text('프로필');
-			  	$('#topDescription').text('');
 		      break;
 		    default :
 		      break;

@@ -1,154 +1,334 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<th:block th:fragment="communityFragment">
-		<!--begin::Content container-->
-		<div id="kt_app_content_container" class="app-container container-fluid">
-			
-			<div class="card mb-6">
-				<div class="card-body pt-9 pb-0">
-					<!--begin::Details-->
-					<div class="d-flex flex-wrap flex-sm-nowrap mb-6">
-						<h2>커뮤니티 인기글 모음 :D</h2>
-					</div>
+<th:block th:fragment="communityFragment">
+	<!--begin::Content container-->
+	<div id="kt_app_content_container" class="app-container container-fluid">
+
+		<div class="card mb-6">
+			<div class="card-body pt-9 pb-0">
+				<!--begin::Details-->
+				<div class="d-flex flex-wrap flex-sm-nowrap mb-6">
+					<h2>커뮤니티 - 다양한 콘텐츠 제공 :D</h2>
 				</div>
+
+				<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab"
+							href="#section1">뮤즈게시판</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
+							href="#section2">뮤지컬 - 팁</a>
+					</li>
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
+							href="#section3">유머글</a>
+					</li>
+				</ul>
+
 			</div>
-			
-			<div class="d-flex flex-wrap flex-stack mb-6">
-				<!--begin::Title-->
-				<h3 class="fw-bolder my-2">모아보기
-				<span class="fs-6 text-gray-400 fw-bold ms-1">(500)</span></h3>
-				<!--end::Title-->
-			</div>
-			
-			<div class="row g-6 mb-6 g-xl-9 mb-xl-9">
-				
-				<div class="d-flex mb-6">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-mlbpark">엠 팍</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-82cook">82쿡</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-bobae">보 베</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-clien">클리앙</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-ddanzi">딴 지</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-						
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-fmkor">FM </span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-humor">웃 대</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-inven">인 벤</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-ou">오 유</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-ppomppu">뽐 뿌</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-ruli">루리웹</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-						
-				<div class="d-flex mb-6 mt-3">
-					<div class="d-flex flex-wrap my-2 me-2">
-						<span class="badge badge-slrclub">SLR</span>
-					</div>
-					<div class="m-0">
-						<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을 느낀 강재준.jpg</a>
-						<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전] | Hit 257549 | 손흥민no.7</span>
-					</div>
-				</div>
-				
-				<div class="text-center pt-9">
-					<a href="#" class="btn btn-primary">더 보기</a>
-				</div>
-								
-			</div>
-			
 		</div>
-		<!--end::Content container-->
-	</th:block>
+
+
+		<div class="tab-content">
+			<div class="tab-pane fade" id="section3" role="tabpanel">
+
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="card">
+							<div class="card-body d-flex flex-column py-9 px-5">
+
+								<div class="d-flex flex-wrap flex-stack mb-6">
+									<h3 class="fw-bolder my-2">유머글
+										<span class="fs-6 text-gray-400 fw-bold ms-1">(500)</span>
+									</h3>
+								</div>
+
+								<div class="d-flex mb-6">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-mlbpark">엠 팍</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-82cook">82쿡</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-bobae">보 베</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-clien">클리앙</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-ddanzi">딴 지</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-fmkor">FM </span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-humor">웃 대</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-inven">인 벤</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-ou">오 유</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-ppomppu">뽐 뿌</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-ruli">루리웹</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="d-flex mb-6 mt-3">
+									<div class="d-flex flex-wrap my-2 me-2">
+										<span class="badge badge-slrclub">SLR</span>
+									</div>
+									<div class="m-0">
+										<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">하하의 습관성 발언에 배신감을
+											느낀 강재준.jpg</a>
+										<span class="text-gray-600 fw-bold d-block pt-1 fs-8">2022-06-14 11:28 | [2시간전]
+											| Hit 257549 | 손흥민no.7</span>
+									</div>
+								</div>
+
+								<div class="text-center pt-9">
+									<a href="#" class="btn btn-primary">더 보기</a>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+
+
+				</div>
+
+			</div>
+
+			<div class="tab-pane fade" id="section2" role="tabpanel">
+				뮤지컬 팁
+			</div>
+
+			<div class="tab-pane fade show active" id="section1" role="tabpanel">
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body d-flex flex-center flex-column py-9 px-5">
+								<div class="symbol symbol-65px symbol-circle mb-5">
+									<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+									<div
+										class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3">
+									</div>
+								</div>
+								<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">박효신</a>
+								<div class="fw-bold text-gray-400 mb-6">가수 뮤지컬배우</div>
+								<div class="d-flex flex-center flex-wrap mb-5">
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">14,560</div>
+										<div class="fw-bold text-gray-400">팔로워</div>
+									</div>
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">100</div>
+										<div class="fw-bold text-gray-400">인기점수</div>
+									</div>
+								</div>
+								<a href="/community_muse?id=1" class="btn btn-sm btn-light-primary">확인</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body d-flex flex-center flex-column py-9 px-5">
+								<div class="symbol symbol-65px symbol-circle mb-5">
+									<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+									<div
+										class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3">
+									</div>
+								</div>
+								<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">박효신</a>
+								<div class="fw-bold text-gray-400 mb-6">가수 뮤지컬배우</div>
+								<div class="d-flex flex-center flex-wrap mb-5">
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">14,560</div>
+										<div class="fw-bold text-gray-400">팔로워</div>
+									</div>
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">100</div>
+										<div class="fw-bold text-gray-400">인기점수</div>
+									</div>
+								</div>
+								<a href="/community_muse?id=2" class="btn btn-sm btn-light-primary">확인</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body d-flex flex-center flex-column py-9 px-5">
+								<div class="symbol symbol-65px symbol-circle mb-5">
+									<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+									<div
+										class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3">
+									</div>
+								</div>
+								<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">박효신</a>
+								<div class="fw-bold text-gray-400 mb-6">가수 뮤지컬배우</div>
+								<div class="d-flex flex-center flex-wrap mb-5">
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">14,560</div>
+										<div class="fw-bold text-gray-400">팔로워</div>
+									</div>
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">100</div>
+										<div class="fw-bold text-gray-400">인기점수</div>
+									</div>
+								</div>
+								<a href="/community_muse?id=3" class="btn btn-sm btn-light-primary">확인</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-body d-flex flex-center flex-column py-9 px-5">
+								<div class="symbol symbol-65px symbol-circle mb-5">
+									<span class="symbol-label fs-2x fw-bold text-warning bg-light-warning">A</span>
+									<div
+										class="bg-success position-absolute rounded-circle translate-middle start-100 top-100 border border-4 border-white h-15px w-15px ms-n3 mt-n3">
+									</div>
+								</div>
+								<a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">박효신</a>
+								<div class="fw-bold text-gray-400 mb-6">가수 뮤지컬배우</div>
+								<div class="d-flex flex-center flex-wrap mb-5">
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">14,560</div>
+										<div class="fw-bold text-gray-400">팔로워</div>
+									</div>
+									<div class="border border-dashed rounded min-w-90px py-3 px-4 mx-2 mb-3">
+										<div class="fs-6 fw-bolder text-gray-700">100</div>
+										<div class="fw-bold text-gray-400">인기점수</div>
+									</div>
+								</div>
+								<a href="/community_muse?id=4" class="btn btn-sm btn-light-primary">확인</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+	<!--end::Content container-->
+</th:block>
+
 </html>

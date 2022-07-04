@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="myInfoFragment">
+	<!--begin::Content container-->
+	<div id="kt_app_content_container" class="app-container container-fluid">
+
+		<div class="card mb-5 mb-xl-10">
+			<div class="card-body pt-9 pb-0">
+				<!--begin::Details-->
+				<div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+					<!--begin: Pic-->
+					<div class="me-7 mb-4">
+						<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+							<img src="https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=60"
+								alt="image">
+							<div
+								class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
+							</div>
+						</div>
+					</div>
+					<!--end::Pic-->
+					<!--begin::Info-->
+					<div class="flex-grow-1">
+						<!--begin::Title-->
+						<div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+
+							<div class="d-flex flex-column">
+								<!--begin::Name-->
+								<div class="d-flex align-items-center mb-2">
+									<a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">@닉네임</a>
+								</div>
+								<!--end::Name-->
+								<!--begin::Info-->
+								<div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
+									<a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
+										<!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
+										<span class="svg-icon svg-icon-4 me-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+												viewBox="0 0 24 24" fill="none">
+												<path opacity="0.3"
+													d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
+													fill="currentColor"></path>
+												<path
+													d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
+													fill="currentColor"></path>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->test@naver.com
+									</a>
+								</div>
+								<!--end::Info-->
+							</div>
+						</div>
+						<!--begin::Stats-->
+
+					</div>
+					<!--end::Info-->
+				</div>
+				<!--end::Details-->
+				<!--begin::Navs-->
+				<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab"
+							href="#openWaitLog">티켓팅</a>
+					</li>
+
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
+							href="#secondTicketLog">양도티켓</a>
+					</li>
+
+				</ul>
+				<!--begin::Navs-->
+			</div>
+		</div>
+
+
+		<div class="card pt-4">
+
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="openWaitLog" role="tabpanel">
+
+					<div class="card-header border-0">
+
+						<div class="card-title">
+							<h2>티켓팅</h2>
+						</div>
+
+					</div>
+
+					<div class="card-body py-0">
+
+						<div class="table-responsive">
+
+							<table class="table align-middle table-row-dashed fw-bold text-gray-600 fs-6 gy-5" id="kt_table_customers_logs">
+
+								<tbody>
+									
+									<tr>
+										<td class="min-w-70px">
+											<div class="badge badge-light-success">신청</div>
+										</td>
+										<td>육군 창작 뮤지컬 〈블루헬멧 : 메이사의 노래〉 - 성남 티켓오픈 안내 </td>
+										<td>수고비 30,000</td>
+										<td>VIP등급</td>
+										<td class="pe-0 text-end">2022-07-02</td>
+									</tr>
+									<tr>
+										<td class="min-w-70px">
+											<div class="badge badge-light-danger">실패</div>
+										</td>
+										<td>육군 창작 뮤지컬 〈블루헬멧 : 메이사의 노래〉 - 성남 티켓오픈 안내 </td>
+										<td>수고비 30,000</td>
+										<td>R등급</td>
+										<td class="pe-0 text-end">2022-07-02</td>
+									</tr>
+									<tr>
+										<td class="min-w-70px">
+											<div class="badge badge-light-info">성공</div>
+										</td>
+										<td>육군 창작 뮤지컬 〈블루헬멧 : 메이사의 노래〉 - 성남 티켓오픈 안내 </td>
+										<td>수고비 30,000</td>
+										<td>VIP등급</td>
+										<td class="pe-0 text-end">2022-07-02</td>
+									</tr>
+								</tbody>
+
+							</table>
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+
+				<div class="tab-pane fade" id="secondTicketLog" role="tabpanel">
+
+					<div class="card-header border-0">
+
+						<div class="card-title">
+							<h2>양도티켓</h2>
+						</div>
+
+					</div>
+
+					<div class="card-body py-0">
+						secondeTicket
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+	<!--end::Content container-->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+		})
+	</script>
+
+</th:block>
+
+</html>

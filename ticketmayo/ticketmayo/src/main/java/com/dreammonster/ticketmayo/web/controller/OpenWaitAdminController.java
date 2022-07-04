@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dreammonster.ticketmayo.service.OpenWaitAdminService;
 import com.dreammonster.ticketmayo.service.OpenWaitService;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
 
@@ -23,33 +24,16 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class OpenWaitController {
+public class OpenWaitAdminController {
 	
-	private final OpenWaitService openWaitService;
+	private final OpenWaitAdminService openWaitAdminService;
 	
-	@GetMapping("/openWait")
-	public String openWait() {
+	@GetMapping("/openWaitAdmin")
+	public String openWaitAdmin() {
 		
-		return "openWait";
+		return "openWaitAdmin";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/openWait/api_v1_001", method = RequestMethod.GET)
-	public List<OpenWaitResponseDto> openWait_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
-		
-		// api call
-		List<OpenWaitResponseDto> list = openWaitService.list();
-
-		return list;
-		
-	}
 	
-	@PostMapping("/openWaitBuyMusical")
-	public String openWaitBuyMusical(@RequestParam String subject, @RequestParam String site, Model model) {
-		
-		model.addAttribute("subject", subject);
-		model.addAttribute("site", site);
-		return "openWaitBuy";
-	}
 	
 }

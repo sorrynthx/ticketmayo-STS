@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="openWaitBuyFragment">
+	<!--begin::Content container-->
+	<div id="kt_app_content_container" class="app-container container-fluid">
+
+		<div class="row gy-5 g-xl-10">
+			<!--begin::Col-->
+			<div class="col-xl-12 mb-5 mb-xl-5">
+				<!--begin::Engage widget 1-->
+				<div class="card h-md-100">
+					<!--begin::Body-->
+					<div class="card-body d-flex flex-column flex-center">
+						<!--begin::Heading-->
+						<div class="mb-2">
+							<!--begin::Title-->
+							<h1 class="fw-bold text-gray-800 text-center lh-lg">티켓팅 신청 주의사항
+								<br>
+								<span class="fw-boldest">신청 전 꼭 읽어주세요</span>
+							</h1>
+							<!--end::Title-->
+						</div>
+						<!--end::Heading-->
+						<!--begin::Links-->
+						<div class="text-center mb-1">
+							<!--begin::Link-->
+							<a class="btn btn-sm btn-light" href="#">주의사항 확인</a>
+							<!--end::Link-->
+						</div>
+						<!--end::Links-->
+					</div>
+					<!--end::Body-->
+				</div>
+				<!--end::Engage widget 1-->
+			</div>
+			<!--end::Col-->
+			
+			<!--begin::Col-->
+			<div class="col-xl-12 mb-5 mt-xl-5 mb-xl-5">
+				<!--begin::Engage widget 1-->
+				<div class="card h-md-100">
+					
+					<div class="card-header border-0">
+						<!--begin::Card title-->
+						<div class="card-title m-0">
+							<h3 class="fw-bolder m-0">티켓팅 신청 - 정보 입력</h3>
+						</div>
+						<!--end::Card title-->
+					</div>
+				
+					<!--begin::Body-->
+					<div class="card-body p-9">
+						
+						<div class="row mb-6">
+							<!--begin::Label required-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">공연</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" name="subject" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${subject}">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label required-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">구매처</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" name="site" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${site}">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label required-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">
+								매수
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="2장 이상일 경우, 연석을 우선으로 구매합니다."></i>
+							</label>
+							<!--end::Label-->
+							
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<div class="d-flex flex-stack gap-5 mb-3">
+									        <button type="button" class="btn btn-sm btn-light-primary w-100" data-kt-docs-advanced-forms="interactive" name="interactive-count">1</button>
+									        <button type="button" class="btn btn-sm btn-light-primary w-100" data-kt-docs-advanced-forms="interactive" name="interactive-count">2</button>
+									        <button type="button" class="btn btn-sm btn-light-primary w-100" data-kt-docs-advanced-forms="interactive" name="interactive-count">3</button>
+									        <button type="button" class="btn btn-sm btn-light-primary w-100" data-kt-docs-advanced-forms="interactive" name="interactive-count">4</button>
+									    </div>
+									</div>
+									<!--end::Col-->
+									<input type="number" class="form-control form-control-solid" placeholder="필수 1매 이상" name="count" value="1" />
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label required-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">
+								좌석
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="좌석 명칭이 다를 경우, 최대한 비슷한 등급으로 티켓팅 합니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										
+										<div class="d-flex align-items-center mt-3">
+											<!--begin::Option-->
+											<label class="form-check form-check-inline form-check-solid form-check-danger is-invalid">
+												<input class="form-check-input" name="grade" type="radio" value="VIP" checked="checked">
+												<span class="fw-bold ps-2 fs-6">VIP등급</span>
+											</label>
+											<!--end::Option-->
+											
+											<!--begin::Option-->
+											<label class="form-check form-check-inline form-check-solid form-check-success is-invalid">
+												<input class="form-check-input" name="grade" type="radio" value="R">
+												<span class="fw-bold ps-2 fs-6">R등급</span>
+											</label>
+											<!--end::Option-->
+											
+											<!--begin::Option-->
+											<label class="form-check form-check-inline form-check-solid is-invalid">
+												<input class="form-check-input" name="grade" type="radio" value="S">
+												<span class="fw-bold ps-2 fs-6">S등급</span>
+											</label>
+											<!--end::Option-->
+											
+											<!--begin::Option-->
+											<label class="form-check form-check-inline form-check-solid is-invalid">
+												<input class="form-check-input" name="grade" type="radio" value="A">
+												<span class="fw-bold ps-2 fs-6">A등급</span>
+											</label>
+											
+											<!--end::Option-->
+										</div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								아이디
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 구매처 계정 아이디가 필요합니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" name="siteId" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 아이디">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								비밀번호
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 구매처 계정 비밀번호가 필요합니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<div class="fv-row" data-kt-password-meter="true">
+											
+											<div class="position-relative mb-3">
+												<input type="password" name="sitePw" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 비밀번호">
+												
+												<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+		                							<i class="bi bi-eye-slash fs-2"></i>
+		                							<i class="bi bi-eye fs-2 d-none"></i>
+		            							</span>
+		            							<div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight"></div>
+											</div>
+										</div>
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								연락처
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅 성공 후 연락받을 연락처 입니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="연락 받을 연락처">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+					</div>
+					<!--end::Body-->
+					
+					<div class="card-footer d-flex justify-content-end py-6 px-9">
+						<button type="button" class="btn btn-primary" id="applyBtn">티켓팅 신청</button>
+					</div>
+					
+				</div>
+				<!--end::Engage widget 1-->
+			</div>
+			<!--end::Col-->
+			
+		</div>
+	</div>
+	<!--end::Content container-->
+
+	<script type="text/javascript">
+	const options = document.querySelectorAll('[data-kt-docs-advanced-forms="interactive"]');
+	const inputEl = document.querySelector('[name="count"]');
+	options.forEach(option => {
+	    option.addEventListener('click', e => {
+	        e.preventDefault();
+	        inputEl.value = e.target.innerText;
+	    });
+	});
+	
+	$(document).ready(function () {
+
+	})
+	</script>
+
+</th:block>
+
+</html>
