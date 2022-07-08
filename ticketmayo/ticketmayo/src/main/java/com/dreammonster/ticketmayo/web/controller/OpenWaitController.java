@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dreammonster.ticketmayo.config.auth.LoginUser;
+import com.dreammonster.ticketmayo.config.auth.dto.SessionUser;
 import com.dreammonster.ticketmayo.service.OpenWaitService;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
 
@@ -28,7 +30,11 @@ public class OpenWaitController {
 	private final OpenWaitService openWaitService;
 	
 	@GetMapping("/openWait")
-	public String openWait() {
+	public String openWait(Model model, @LoginUser SessionUser naverUser) {
+
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
 		
 		return "openWait";
 	}

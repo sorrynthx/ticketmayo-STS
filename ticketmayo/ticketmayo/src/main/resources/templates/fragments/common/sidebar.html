@@ -82,12 +82,16 @@
 			<div class="app-sidebar-user d-flex flex-stack py-5 px-8">				
 				<!--begin::Info-->
 				<div class="me-2">
-					<!--begin::Username-->
-					<a href="javascript:void(0);" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-bold lh-0">손님</a>
-					<!--end::Username-->
-					<!--begin::Description-->
-					<span class="app-sidebar-deckription text-gray-400 fw-bold d-block fs-8">회원 서비스 준비중</span>
-					<!--end::Description-->
+					<span th:if="${naverUser != null}">
+						<a href="javascript:void(0);" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-bold lh-0">
+							<span th:text="${naverUser.name}"></span>
+						</a>
+						<span class="app-sidebar-deckription text-gray-400 fw-bold d-block fs-8" th:text="${naverUser.email}"></span>
+					</span>
+					<span th:unless="${naverUser != null}">
+						<a href="javascript:void(0);" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-bold lh-0">손님</a>
+						<span class="app-sidebar-deckription text-gray-400 fw-bold d-block fs-8">손님으로 입장</span>
+					</span>
 				</div>
 				<!--end::Info-->
 				
