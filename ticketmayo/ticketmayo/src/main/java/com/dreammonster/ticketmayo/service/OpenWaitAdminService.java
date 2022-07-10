@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
+import com.dreammonster.ticketmayo.domain.openWait.OpenWaitRepository;
 import com.dreammonster.ticketmayo.utils.ApiMethod;
+import com.dreammonster.ticketmayo.web.dto.OpenWaitAdminReponseDto;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto.OpenWaitResponseDtoBuilder;
 import com.google.gson.Gson;
@@ -18,6 +22,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class OpenWaitAdminService {
 	
-	private final ApiMethod api;
-		
+	private final OpenWaitRepository openWaitRepository;
+	
+	@Transactional
+	public List<OpenWaitAdminReponseDto> applyList() {
+		return openWaitRepository.applyList();
+	}
+	
 }

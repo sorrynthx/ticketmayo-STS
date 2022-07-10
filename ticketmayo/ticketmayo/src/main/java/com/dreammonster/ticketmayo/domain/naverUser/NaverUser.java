@@ -1,7 +1,5 @@
 package com.dreammonster.ticketmayo.domain.naverUser;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -31,7 +29,7 @@ public class NaverUser extends BaseTimeEntity {
 	@Column(nullable = false)
 	private String email;
 	
-	private String picture;
+	private String picture;	
 	
 	@Enumerated(EnumType.STRING)
 	@Column

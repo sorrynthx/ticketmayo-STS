@@ -11,14 +11,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.dreammonster.ticketmayo.config.auth.LoginUser;
 import com.dreammonster.ticketmayo.config.auth.dto.SessionUser;
+import com.dreammonster.ticketmayo.domain.openWait.OpenWait;
 import com.dreammonster.ticketmayo.service.OpenWaitService;
+import com.dreammonster.ticketmayo.web.dto.OpenWaitRequestDto;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
 
 import lombok.RequiredArgsConstructor;
@@ -31,11 +35,9 @@ public class OpenWaitController {
 	
 	@GetMapping("/openWait")
 	public String openWait(Model model, @LoginUser SessionUser naverUser) {
-
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		
 		return "openWait";
 	}
 	
@@ -51,11 +53,25 @@ public class OpenWaitController {
 	}
 	
 	@PostMapping("/openWaitBuyMusical")
-	public String openWaitBuyMusical(@RequestParam String subject, @RequestParam String site, Model model) {
+	public String openWaitBuyMusical(@RequestParam String subject, @RequestParam String site, Model model, @LoginUser SessionUser naverUser) {
+		
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
 		
 		model.addAttribute("subject", subject);
 		model.addAttribute("site", site);
 		return "openWaitBuy";
+	}
+	
+	@ResponseBody
+	@PostMapping("/openWait/api_v1_002")
+	public Long openWaitSave(@RequestBody OpenWaitRequestDto openWait) {
+		
+		int cnt = openWaitService.findByUserEmailAndPlayName(openWait); 
+		
+		if (cnt != 0) return -1L; 
+		else return openWaitService.save(openWait);
 	}
 	
 }

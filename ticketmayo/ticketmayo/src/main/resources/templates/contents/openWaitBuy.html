@@ -44,6 +44,12 @@
 						<!--begin::Card title-->
 						<div class="card-title m-0">
 							<h3 class="fw-bolder m-0">티켓팅 신청 - 정보 입력</h3>
+							<span th:if="${naverUser != null}">
+								<input type="hidden" id="userEmail" th:value="${{naverUser.email}}">
+							</span>
+							<span th:unless="${naverUser != null}">
+								<input type="hidden" id="userEmail" value="">
+							</span>
 						</div>
 						<!--end::Card title-->
 					</div>
@@ -61,7 +67,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" name="subject" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${subject}">
+										<input type="text" id="playName" name="playName" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${subject}">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -82,7 +88,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" name="site" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${site}">
+										<input type="text" id="site" name="site" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${site}">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -115,7 +121,7 @@
 									    </div>
 									</div>
 									<!--end::Col-->
-									<input type="number" class="form-control form-control-solid" placeholder="필수 1매 이상" name="count" value="1" />
+									<input type="number" id="qty" class="form-control form-control-solid" placeholder="필수 1매 이상" name="qty" value="1" readonly />
 								</div>
 								<!--end::Row-->
 							</div>
@@ -188,7 +194,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" name="siteId" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 아이디">
+										<input type="text" id="siteId" name="siteId" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 아이디">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -215,7 +221,7 @@
 										<div class="fv-row" data-kt-password-meter="true">
 											
 											<div class="position-relative mb-3">
-												<input type="password" name="sitePw" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 비밀번호">
+												<input type="password" id="sitePw" name="sitePw" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 비밀번호">
 												
 												<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 		                							<i class="bi bi-eye-slash fs-2"></i>
@@ -247,7 +253,31 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="연락 받을 연락처">
+										<input type="text" id="phone" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="연락 받을 연락처">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								수고비
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅 난이도에 따라 가격이 달라집니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="number" id="applyCost" name="applyCost" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="수고비" value="100000" readonly>
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -276,16 +306,97 @@
 
 	<script type="text/javascript">
 	const options = document.querySelectorAll('[data-kt-docs-advanced-forms="interactive"]');
-	const inputEl = document.querySelector('[name="count"]');
+	const inputEl_qty = document.querySelector('[name="qty"]');
+	const inputEl_applyCost = document.querySelector('[name="applyCost"]');
+	
 	options.forEach(option => {
 	    option.addEventListener('click', e => {
 	        e.preventDefault();
-	        inputEl.value = e.target.innerText;
+	        inputEl_qty.value = e.target.innerText;
+	        
+	        const inputEl_grade = document.querySelector('input[name="grade"]:checked').value;
+	        if (inputEl_grade == 'VIP') inputEl_applyCost.value = e.target.innerText * 100000
+	        else if (inputEl_grade == 'R') inputEl_applyCost.value = e.target.innerText * 50000
+	        else inputEl_applyCost.value = e.target.innerText * 30000
 	    });
 	});
 	
 	$(document).ready(function () {
-
+		
+		const openWaitInit= {
+			
+			gradeFn: function () {
+				 $("input[name='grade']").on('click', function() {
+					var grade = $("input[name='grade']:checked").val();
+					var qty = $("#qty").val();
+					
+					if (grade == 'VIP') $("#applyCost").val(qty * 100000);
+					else if (grade == 'R') $("#applyCost").val(qty * 50000);
+					else $("#applyCost").val(qty * 30000);
+				});
+			},
+			
+			init: function () {
+				var _this = this;
+				$('#applyBtn').on('click', function() {
+					_this.save();
+				});
+			},
+			
+			save: function () {
+				var data = {
+					playName: $('#playName').val(),
+					site: $('#site').val(),
+					qty: $('#qty').val(),
+					grade: $('input[name=grade]:checked').val(),
+					siteId: $('#siteId').val(),
+					sitePw: $('#sitePw').val(),
+					phone: $('#phone').val(),
+					applyCost: $('#applyCost').val(),
+					userEmail: $('#userEmail').val()
+				}
+				
+				console.log(data);
+				
+				if (data.qty == '') {
+					alert('매수를 입력하세요.');
+					return false;
+				}
+				
+				if (data.grade == '') {
+					alert('좌석등급을 입력하세요.');
+					return false;
+				}
+				
+				if (data.siteId == '') {
+					alert('구매처 아이디를 입력하세요.');
+					return false;
+				}
+				
+				if (data.sitePw == '') {
+					alert('구매처 비밀번호를 입력하세요.');
+					return false;
+				}
+				
+				if (data.phone == '') {
+					alert('연락처를 입력하세요.');
+					return false;
+				}
+				
+				if (data.userEmail == '') {
+					alert('로그인 후 이용해주세요.');
+					return false;
+				}
+				
+				ajaxCall4Json('/openWait/api_v1_002', data, 'post' ,function(result){
+					console.log(result);
+				});
+			}
+		};
+		
+		openWaitInit.init();
+		openWaitInit.gradeFn();
+		
 	})
 	</script>
 

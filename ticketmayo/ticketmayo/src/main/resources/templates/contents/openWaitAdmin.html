@@ -239,6 +239,17 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			
+			const openWaitInit= {
+				
+				load: function () {
+					
+					ajaxCall4Json('/openWait/admin/api_v1_001', null, 'post' ,function(result){
+						console.log(result);
+					});	
+				}
+			};
+			openWaitInit.load();
+			
 			var _initOpenWait_list = function () {
 				var groupColumn = 1;
 

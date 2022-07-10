@@ -40,8 +40,7 @@ public class CustomOAuth2NaverUserService implements OAuth2UserService<OAuth2Use
 													.getUserInfoEndpoint()
 													.getUserNameAttributeName(); 
 		
-		OAuthAttributes attributes = OAuthAttributes
-				.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 		
 		NaverUser naverUser = saveOrUpdate(attributes);
 		
@@ -51,17 +50,13 @@ public class CustomOAuth2NaverUserService implements OAuth2UserService<OAuth2Use
 				Collections.singleton(new SimpleGrantedAuthority(naverUser.getRoleKey())), 
 				attributes.getAttributes(), 
 				attributes.getNameAttributeKey()
-			);
+				);
 	}
 	
 	private NaverUser saveOrUpdate(OAuthAttributes attributes) {
 		NaverUser naverUser = naverUserRepository.findByEmail(attributes.getEmail())
-												.map(entity -> entity.update(
-																				attributes.getName(), 
-																				attributes.getPicture()
-																			)
-													)
-												.orElse(attributes.toEntity(attributes.getEmail()));
+												 .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+												 .orElse(attributes.toEntity(attributes.getEmail()));
 		return naverUserRepository.save(naverUser);
 	}
 	

@@ -29,7 +29,6 @@ public class OAuthAttributes extends BaseTimeEntity {
 	
 	public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
 		return ofNaver("id", attributes);
-		
 	}
 	
 	private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
@@ -47,7 +46,7 @@ public class OAuthAttributes extends BaseTimeEntity {
 	
 	public NaverUser toEntity(String email) {
 		
-		if (email.equals("toad001@nate.com") ) {
+		if (email.equals("toad001@naver.com")) {
 			return NaverUser.builder()
 					.name(name)
 					.email(email)

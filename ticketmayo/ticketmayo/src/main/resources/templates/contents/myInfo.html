@@ -10,13 +10,16 @@
 				<div class="d-flex flex-wrap flex-sm-nowrap mb-3">
 					<!--begin: Pic-->
 					<div class="me-7 mb-4">
-						<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+						
+						<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative" th:if="${naverUser != null}">
+							<img th:src="${naverUser.picture}" alt="image">
+						</div>
+						
+						<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative" th:unless="${naverUser != null}">
 							<img src="https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=60"
 								alt="image">
-							<div
-								class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
-							</div>
 						</div>
+						
 					</div>
 					<!--end::Pic-->
 					<!--begin::Info-->
@@ -27,25 +30,34 @@
 							<div class="d-flex flex-column">
 								<!--begin::Name-->
 								<div class="d-flex align-items-center mb-2">
-									<a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">@닉네임</a>
+									<span th:if="${naverUser != null}">
+										<a href="javascript:void(0);" class="text-gray-900 fs-2 fw-bolder me-1">
+											@<span th:text="${naverUser.name}"></span>
+										</a>
+									</span>
+									<span th:unless="${naverUser != null}">
+										로그인 해주세요.
+									</span>
 								</div>
 								<!--end::Name-->
 								<!--begin::Info-->
 								<div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
-									<a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
-										<!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
-										<span class="svg-icon svg-icon-4 me-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-												viewBox="0 0 24 24" fill="none">
-												<path opacity="0.3"
-													d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
-													fill="currentColor"></path>
-												<path
-													d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
-													fill="currentColor"></path>
-											</svg>
+									<a href="javascript:void(0);" class="d-flex align-items-center text-gray-400 mb-2">
+										
+										<span th:if="${naverUser != null}">
+											<span class="svg-icon svg-icon-4 me-1">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3"
+														d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
+														fill="currentColor"></path>
+													<path
+														d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
+														fill="currentColor"></path>
+												</svg>
+											</span>
+											<span th:text="${naverUser.email}"></span>
 										</span>
-										<!--end::Svg Icon-->test@naver.com
 									</a>
 								</div>
 								<!--end::Info-->

@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
+import com.dreammonster.ticketmayo.domain.openWait.OpenWaitRepository;
 import com.dreammonster.ticketmayo.utils.ApiMethod;
+import com.dreammonster.ticketmayo.web.dto.OpenWaitRequestDto;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitResponseDto.OpenWaitResponseDtoBuilder;
 import com.google.gson.Gson;
@@ -19,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class OpenWaitService {
 	
 	private final ApiMethod api;
+	private final OpenWaitRepository openWaitRepository;
 	
 	// 오픈예정 공연 호출.
 	public List<OpenWaitResponseDto> list() {
@@ -59,4 +64,13 @@ public class OpenWaitService {
 		return new OpenWaitResponseDto(code);
 	}
 	
+	@Transactional
+	public Long save(OpenWaitRequestDto openWaitRequestDto) {
+		return openWaitRepository.save(openWaitRequestDto.toEntity()).getId();
+	}
+	
+	@Transactional
+	public int findByUserEmailAndPlayName(OpenWaitRequestDto openWaitRequestDto) {
+		return openWaitRepository.findByUserEmailAndPlayName(openWaitRequestDto.getUserEmail(), openWaitRequestDto.getPlayName());
+	}
 }
