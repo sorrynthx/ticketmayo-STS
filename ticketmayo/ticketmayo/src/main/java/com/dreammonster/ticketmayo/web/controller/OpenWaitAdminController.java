@@ -59,4 +59,18 @@ public class OpenWaitAdminController {
 		return openWaitAdminService.applyList();
 	}
 	
+	@ResponseBody
+	@PostMapping("/openWait/admin/api_v1_002")
+	public int openWaitAdminChangeStatus(@RequestBody OpenWaitRequestDto openWaitRequestDto) {
+		
+		return openWaitAdminService.changeStatus(openWaitRequestDto);
+	}
+	
+	@ResponseBody
+	@PostMapping("/openWait/admin/api_v1_003")
+	public List<OpenWaitAdminReponseDto> openWaitAdminFinishList() {
+		
+		return openWaitAdminService.finishList();
+	}
+	
 }

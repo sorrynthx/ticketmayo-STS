@@ -7,11 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.dreammonster.ticketmayo.domain.BaseTimeEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@JsonIgnoreProperties(value={"modified_date"}, allowGetters=true)
 @Getter
 @NoArgsConstructor
 @Entity
@@ -51,8 +53,14 @@ public class OpenWait extends BaseTimeEntity {
 	@Column
 	private String status;
 	
+	@Column
+	private String birth;
+	
+	@Column
+	private String hopeSeat;
+	
 	@Builder
-	public OpenWait(String playName, String site, int qty, String grade, String siteId, String sitePw, String applyCost, String phone, String userEmail, String status) {
+	public OpenWait(String playName, String site, int qty, String grade, String siteId, String sitePw, String applyCost, String phone, String userEmail, String status, String birth, String hopeSeat) {
 		
 		this.playName = playName;
 		this.site = site;
@@ -64,6 +72,8 @@ public class OpenWait extends BaseTimeEntity {
 		this.phone = phone;
 		this.userEmail = userEmail;
 		this.status = status;
+		this.birth = birth;
+		this.hopeSeat = hopeSeat;
 	}
 	
 }

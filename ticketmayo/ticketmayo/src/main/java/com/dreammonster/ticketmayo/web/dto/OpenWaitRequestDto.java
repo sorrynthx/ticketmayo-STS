@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class OpenWaitRequestDto {
 	
-private Long id;
-	
+	private Long id;
 	private String playName;
 	private String site;
 	private int qty;
@@ -21,9 +20,12 @@ private Long id;
 	private String applyCost;
 	private String phone;
 	private String userEmail;
+	private String birth;
+	private String hopeSeat;
+	private String status;
 	
 	@Builder
-	public OpenWaitRequestDto(String playName, String site, int qty, String grade, String siteId, String sitePw, String applyCost, String phone, String userEmail) {
+	public OpenWaitRequestDto(String playName, String site, int qty, String grade, String siteId, String sitePw, String applyCost, String phone, String userEmail, String birth, String hopeSeat) {
 		this.playName = playName;
 		this.site = site;
 		this.qty = qty;
@@ -33,6 +35,15 @@ private Long id;
 		this.applyCost = applyCost;
 		this.phone = phone;
 		this.userEmail = userEmail;
+		this.birth = birth;
+		this.hopeSeat = hopeSeat;
+	}
+	
+	@Builder
+	public OpenWaitRequestDto(Long id, String applyCost, String status ) {
+		this.id = id;
+		this.applyCost = applyCost;
+		this.status = status;
 	}
 	
 	public OpenWait toEntity() {
@@ -47,6 +58,8 @@ private Long id;
 						.phone(phone)
 						.userEmail(userEmail)
 						.status("신청")
+						.birth(birth)
+						.hopeSeat(hopeSeat)
 						.build();
 	}
 }

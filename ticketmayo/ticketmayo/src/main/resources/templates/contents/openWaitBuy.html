@@ -80,7 +80,7 @@
 						
 						<div class="row mb-6">
 							<!--begin::Label required-->
-							<label class="col-lg-4 col-form-label fw-bolder fs-6">구매처</label>
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">예매처</label>
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8">
@@ -172,6 +172,7 @@
 											
 											<!--end::Option-->
 										</div>
+										<input type="text" id="hopeSeat" class="form-control form-control-solid mt-3" placeholder="희망좌석 (예: C열 7번) - 최대한 가까운 자리로 예매합니다." name="hopeSeat" value="" />
 									</div>
 									<!--end::Col-->
 									
@@ -185,7 +186,7 @@
 							<!--begin::Label-->
 							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
 								아이디
-								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 구매처 계정 아이디가 필요합니다."></i>
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 예매처 계정 아이디가 필요합니다."></i>
 							</label>
 							<!--end::Label-->
 							<!--begin::Col-->
@@ -194,7 +195,7 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" id="siteId" name="siteId" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 아이디">
+										<input type="text" id="siteId" name="siteId" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="예매처 아이디">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -209,7 +210,7 @@
 							<!--begin::Label-->
 							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
 								비밀번호
-								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 구매처 계정 비밀번호가 필요합니다."></i>
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅을 위해 예매처 계정 비밀번호가 필요합니다."></i>
 							</label>
 							<!--end::Label-->
 							<!--begin::Col-->
@@ -221,7 +222,7 @@
 										<div class="fv-row" data-kt-password-meter="true">
 											
 											<div class="position-relative mb-3">
-												<input type="password" id="sitePw" name="sitePw" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="구매처 비밀번호">
+												<input type="password" id="sitePw" name="sitePw" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="예매처 비밀번호">
 												
 												<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 		                							<i class="bi bi-eye-slash fs-2"></i>
@@ -254,6 +255,30 @@
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
 										<input type="text" id="phone" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="연락 받을 연락처">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								생년월일
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="예) 19991231 "></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" id="birth" name="birth" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="생년월일 8자리 (예: 19991231)">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -353,7 +378,9 @@
 					sitePw: $('#sitePw').val(),
 					phone: $('#phone').val(),
 					applyCost: $('#applyCost').val(),
-					userEmail: $('#userEmail').val()
+					userEmail: $('#userEmail').val(),
+					hopeSeat: $('#hopeSeat').val(),
+					birth: $('#birth').val()
 				}
 				
 				console.log(data);
@@ -368,18 +395,28 @@
 					return false;
 				}
 				
+				if (data.hopeSeat.length > 30) {
+					alert('글자 수를 25자 이하로 입력하세요.');
+					return false;
+				}
+				
 				if (data.siteId == '') {
-					alert('구매처 아이디를 입력하세요.');
+					alert('예매처 아이디를 입력하세요.');
 					return false;
 				}
 				
 				if (data.sitePw == '') {
-					alert('구매처 비밀번호를 입력하세요.');
+					alert('예매처 비밀번호를 입력하세요.');
 					return false;
 				}
 				
 				if (data.phone == '') {
 					alert('연락처를 입력하세요.');
+					return false;
+				}
+				
+				if (data.birth == '') {
+					alert('생년월일을 입력하세요.');
 					return false;
 				}
 				

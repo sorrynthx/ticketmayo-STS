@@ -14,5 +14,7 @@ public interface OpenWaitAdminReponseDto {
 	String getStatus();
 	String getUserEmail();
 	String getCreatedDate();
+	String getHopeSeat();
+	String getBirth();
 	
 }
