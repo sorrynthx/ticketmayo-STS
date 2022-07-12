@@ -39,13 +39,6 @@ public class OpenWaitRequestDto {
 		this.hopeSeat = hopeSeat;
 	}
 	
-	@Builder
-	public OpenWaitRequestDto(Long id, String applyCost, String status ) {
-		this.id = id;
-		this.applyCost = applyCost;
-		this.status = status;
-	}
-	
 	public OpenWait toEntity() {
 		return OpenWait.builder()
 						.playName(playName)

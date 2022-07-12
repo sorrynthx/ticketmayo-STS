@@ -103,7 +103,7 @@
 							<!--begin::Label required-->
 							<label class="col-lg-4 col-form-label fw-bolder fs-6">
 								매수
-								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="2장 이상일 경우, 연석을 우선으로 구매합니다."></i>
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="2장 이상일 경우, 최대한 가까운 자리로 구매합니다."></i>
 							</label>
 							<!--end::Label-->
 							
@@ -302,7 +302,31 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="number" id="applyCost" name="applyCost" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="수고비" value="100000" readonly>
+										<input type="number" id="applyCost" name="applyCost" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="수고비" value="50000" readonly>
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">
+								무통장입금
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="현재는 무통장 입금만 가능합니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-12 fv-row fv-plugins-icon-container">
+										<input type="text" id="account" name="account" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="계좌번호" value="기업은행 123-0001-11234421 (예금주: 김*윤)" readonly>
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -340,9 +364,9 @@
 	        inputEl_qty.value = e.target.innerText;
 	        
 	        const inputEl_grade = document.querySelector('input[name="grade"]:checked').value;
-	        if (inputEl_grade == 'VIP') inputEl_applyCost.value = e.target.innerText * 100000
-	        else if (inputEl_grade == 'R') inputEl_applyCost.value = e.target.innerText * 50000
-	        else inputEl_applyCost.value = e.target.innerText * 30000
+	        if (inputEl_grade == 'VIP') inputEl_applyCost.value = e.target.innerText * 50000
+	        else if (inputEl_grade == 'R') inputEl_applyCost.value = e.target.innerText * 30000
+	        else inputEl_applyCost.value = e.target.innerText * 25000
 	    });
 	});
 	
@@ -355,16 +379,48 @@
 					var grade = $("input[name='grade']:checked").val();
 					var qty = $("#qty").val();
 					
-					if (grade == 'VIP') $("#applyCost").val(qty * 100000);
-					else if (grade == 'R') $("#applyCost").val(qty * 50000);
-					else $("#applyCost").val(qty * 30000);
+					if (grade == 'VIP') $("#applyCost").val(qty * 50000);
+					else if (grade == 'R') $("#applyCost").val(qty * 30000);
+					else $("#applyCost").val(qty * 25000);
 				});
 			},
 			
 			init: function () {
 				var _this = this;
-				$('#applyBtn').on('click', function() {
-					_this.save();
+					
+				const button = document.getElementById('applyBtn');
+				button.addEventListener('click', e =>{
+				    e.preventDefault();
+				
+				    Swal.fire({
+				        text: "계좌이체 완료 했나요? ",
+				        icon: "question",
+				        buttonsStyling: false,
+				        showCancelButton: true,
+				        confirmButtonText: "네! 이체했습니다.",
+				        cancelButtonText: '아니요 아직...',
+				        customClass: {
+				            confirmButton: "btn btn-primary",
+				            cancelButton: 'btn btn-danger'
+				        }
+				    }).then(function(result) {
+				      if (result.isConfirmed) {
+				        
+				        var saveResult = _this.save();
+				        
+				        if (!saveResult) return false;
+				        
+				        Swal.fire({
+				          title: '감사합니다!',
+				          text: '입금 확인 후 티켓팅 신청합니다.',
+				          icon: 'success'
+				        }).then(function() {
+				          console.log('success');
+				        });
+				      } else {
+				        Swal.fire("취소", "계좌이체 후 티켓팅 신청해주세요.", "error");
+				      }
+				    });
 				});
 			},
 			

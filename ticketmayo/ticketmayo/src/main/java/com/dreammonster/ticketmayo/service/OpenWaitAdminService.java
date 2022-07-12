@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.dreammonster.ticketmayo.domain.openWait.OpenWait;
 import com.dreammonster.ticketmayo.domain.openWait.OpenWaitRepository;
 import com.dreammonster.ticketmayo.utils.ApiMethod;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitAdminReponseDto;
@@ -31,13 +32,19 @@ public class OpenWaitAdminService {
 	}
 	
 	@Transactional
-	public int changeStatus(OpenWaitRequestDto openWaitRequestDto) {
-		return openWaitRepository.changeStatus(openWaitRequestDto);
+	public List<OpenWaitAdminReponseDto> finishList() {
+		return openWaitRepository.finishList();
 	}
 	
 	@Transactional
-	public List<OpenWaitAdminReponseDto> finishList() {
-		return openWaitRepository.finishList();
+	public Long updateStatus(OpenWaitRequestDto openWaitRequestDto) {
+		
+		OpenWait dto = openWaitRepository.findById(openWaitRequestDto.getId())
+										 .orElseThrow(() -> new IllegalArgumentException("open_wait 테이블에서 해당 id를 찾을 수 없습니다. id=" + openWaitRequestDto.getId()));
+		
+		dto.updateStatus(openWaitRequestDto.getApplyCost(), openWaitRequestDto.getStatus());
+		
+		return openWaitRequestDto.getId();
 	}	
 	
 }

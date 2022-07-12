@@ -76,4 +76,8 @@ public class OpenWait extends BaseTimeEntity {
 		this.hopeSeat = hopeSeat;
 	}
 	
+	public void updateStatus(String applyCost, String status) {
+		this.applyCost = applyCost;
+		this.status = status;
+	}
 }
