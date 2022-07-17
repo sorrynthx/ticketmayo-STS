@@ -8,21 +8,14 @@ import com.dreammonster.ticketmayo.config.auth.LoginUser;
 import com.dreammonster.ticketmayo.config.auth.dto.SessionUser;
 
 @Controller
-public class CommunityController {
+public class TipController {
 	
-	@GetMapping("/community")
-	public String community(Model model, @LoginUser SessionUser naverUser) {
+	@GetMapping("/tip")
+	public String tip(Model model, @LoginUser SessionUser naverUser) {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "community";
+		return "tip";
 	}
 	
-	@GetMapping("/community_muse")
-	public String communityMuse(Model model, @LoginUser SessionUser naverUser) {
-		if (naverUser != null) {
-			model.addAttribute("naverUser", naverUser);
-		}
-		return "communityMuse";
-	}
 }

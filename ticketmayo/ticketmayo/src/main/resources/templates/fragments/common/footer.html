@@ -25,5 +25,72 @@
 			<!--end::Footer container-->
 		</div>
 		<!--end::Footer-->
+		
+		<!-- script -->
+	    <script type="text/javascript">
+	    	if (typeof jQuery == 'undefined') {
+	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
+	      	}
+	      		    
+	    	/* active link url */
+			const url = window.location.pathname;	   		
+	   		
+	   		$('.menu-link').each(function () {
+	   	   		var currUrl = $(this).attr('href');
+	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
+	   	   	});
+	   		
+	   		/* top title description */
+	   		switch (url) {
+		    case '/openWait' :
+		      	$('#topTitle').text('오픈예정 티켓');
+		      	$('#topDescription').text('이번 주 오픈 티켓 확인!');
+		      	break;
+		    case '/openWaitBuyMusical' :
+		      	$('#topTitle').text('오픈예정 티켓 신청');
+		      	$('#topDescription').text('간편하게 티켓팅 신청');
+		      	break;
+		    case '/openWaitInvoice' :
+		      	$('#topTitle').text('오픈예정 티켓 신청 결과');
+		      	$('#topDescription').text('티켓팅 신청 결과 입니다.');
+		      	break; 
+		    case '/secondTicket' :
+		    	$('#topTitle').text('양도티켓 판매');
+			  	$('#topDescription').text('양도된 티켓을 빠르게 구매!');
+		      break;
+		    case '/secondTicketPayment' :
+		    	$('#topTitle').text('양도티켓 구매');
+			  	$('#topDescription').text('양도티켓 구매 진행중...');
+		      break; 
+		    case '/tip' :
+		    	$('#topTitle').text('뮤지컬 팁 게시판');
+			  	$('#topDescription').text('뮤지컬 관람 시, 필요한 꿀팁 소개!');
+		      break;
+		    case '/muse' :
+		    	$('#topTitle').text('뮤즈 게시판');
+			  	$('#topDescription').text('좋아하는 뮤즈 소식을 확인!');
+		      break;
+		    case '/community' :
+		    	$('#topTitle').text('유머 게시판');
+			  	$('#topDescription').text('인터넷에서 이슈인 다양한 글을 확인!');
+		      break;
+		    case '/notice' :
+		    	$('#topTitle').text('공지사항');
+			  	$('#topDescription').text('티켓마요 공지사항 안내!');
+		      break; 
+		    case '/faq' :
+		    	$('#topTitle').text('자주 찾는 질문');
+			  	$('#topDescription').text('많이 물어보는 질문!');
+		      break;
+		    case '/myInfo' :
+		    	$('#topTitle').text('프로필');
+			  	$('#topDescription').text('');
+		      break;
+		    default :
+		      break;
+		  	}
+	   		
+	    </script>
+		
 	</th:block>
 </html>

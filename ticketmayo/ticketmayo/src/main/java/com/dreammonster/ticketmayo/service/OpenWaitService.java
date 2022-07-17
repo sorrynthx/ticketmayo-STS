@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.dreammonster.ticketmayo.domain.openWait.OpenWait;
 import com.dreammonster.ticketmayo.domain.openWait.OpenWaitRepository;
 import com.dreammonster.ticketmayo.utils.ApiMethod;
 import com.dreammonster.ticketmayo.web.dto.OpenWaitRequestDto;
@@ -71,6 +73,17 @@ public class OpenWaitService {
 	
 	@Transactional
 	public int findByUserEmailAndPlayName(OpenWaitRequestDto openWaitRequestDto) {
-		return openWaitRepository.findByUserEmailAndPlayName(openWaitRequestDto.getUserEmail(), openWaitRequestDto.getPlayName());
+		return openWaitRepository.findByUserEmailAndPlayName(
+													openWaitRequestDto.getUserEmail(), 
+													openWaitRequestDto.getPlayName(),
+													openWaitRequestDto.getHopeDay(),
+													openWaitRequestDto.getHopeTime()
+													);
+	}
+	
+	@Transactional
+	public Optional<OpenWait> findById(Long id) {
+		return openWaitRepository.findById(id);
+		
 	}
 }

@@ -16,5 +16,15 @@ public interface OpenWaitAdminReponseDto {
 	String getCreatedDate();
 	String getHopeSeat();
 	String getBirth();
+	String getDepositBank();
+	String getDepositOwner();
+	String getDepositAcct();
+	String getHopeDay();
+	String getHopeTime();
 	
+	String getRefundAccount();
+	String getAccountOwner();
+	String getBankName();
+
 }
+

@@ -4,21 +4,6 @@
 	<!-- HEAD -->
 	<th:block th:replace="fragments/common/head :: headFragment"></th:block>
 	
-	<style type="text/css">
-	.badge-mlbpark {color: #ffffff; background-color: #fe5e00;}
-	.badge-82cook {color: #ffffff; background-color: #37832d;}
-	.badge-bobae {color: #ffffff; background-color: #4588ce;}
-	.badge-clien {color: #ffffff; background-color: #3d4881;}
-	.badge-ddanzi {color: #ffffff; background-color: #decdaf;}
-	.badge-fmkor {color: #ffffff; background-color: #5176cf;}
-	.badge-humor {color: #ffffff; background-color: #ed1746;}
-	.badge-inven {color: #ffffff; background-color: #7ec73e;}
-	.badge-ou {color: #ffffff; background-color: #4d6c77;}
-	.badge-ppomppu {color: #ffffff; background-color: #a5a5a5;}
-	.badge-ruli {color: #ffffff; background-color: #0861b6;}
-	.badge-slrclub {color: #ffffff; background-color: #438edd;}
-	</style>
-	
 	<!--begin::Body-->
 	<body id="kt_app_body" 
 		data-kt-app-layout="light-sidebar" 
@@ -31,8 +16,7 @@
 		
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root" id="kt_app_root">
-			
-			
+
 			<!--begin::Page-->
 			<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
 				
@@ -42,7 +26,22 @@
 				
 				<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 					<!-- SIDEBAR -->
-					<th:block th:replace="fragments/common/sidebar :: sidebarFragment"></th:block>
+					<span th:if="${naverUser}">
+						<span th:switch="${#strings.toString(naverUser.role)}">
+							<span th:case="'GUEST'">
+								<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+							</span>
+							<span th:case="'ADMIN'">
+								<th:block th:replace="fragments/common/sidebarAdmin :: sidebarAdminFragment" ></th:block>
+							</span>
+							<span th:case="*">
+								<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+							</span>
+						</span>
+					</span>
+					<span th:unless="${naverUser}">
+						<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+					</span>
 					
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -51,7 +50,7 @@
 							<!--begin::Content-->
 							<div id="kt_app_content" class="app-content flex-column-fluid">
 								<!-- CONTENT -->
-								<th:block th:replace="contents/community :: communityFragment"></th:block>
+								<th:block th:replace="contents/openWaitInvoice :: openWaitInvoiceFragment"></th:block>
 							</div>
 							<!--end::Content-->
 						</div>
@@ -72,4 +71,10 @@
 		
 	</body>
 	<!--end::Body-->
+	<script>
+	$(document).ready(function(){
+		
+	})
+	</script>
+	
 </html>

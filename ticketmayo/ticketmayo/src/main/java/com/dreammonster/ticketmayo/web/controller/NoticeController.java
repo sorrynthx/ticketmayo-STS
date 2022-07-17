@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dreammonster.ticketmayo.config.auth.LoginUser;
 import com.dreammonster.ticketmayo.config.auth.dto.SessionUser;
-import com.dreammonster.ticketmayo.service.FaqService;
-import com.dreammonster.ticketmayo.web.dto.FaqResponseDto;
+import com.dreammonster.ticketmayo.service.NoticeService;
+import com.dreammonster.ticketmayo.web.dto.NoticeResponseDto;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class FaqController {
+public class NoticeController {
 	
-	private final FaqService faqService;
+	private final NoticeService noticeService;
 	
-	@GetMapping("/faq")
-	public String faq(Model model, @LoginUser SessionUser naverUser) {
+	@GetMapping("/notice")
+	public String notice(Model model, @LoginUser SessionUser naverUser) {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "faq";
+		return "notice";
 	}
 	
 	@ResponseBody
-	@PostMapping("/faq/api_v1_001")
-	public List<FaqResponseDto> faq_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
+	@PostMapping("/notice/api_v1_001")
+	public List<NoticeResponseDto> notice_api_v1_001(HttpServletRequest HttpRequest, HttpServletResponse HttpResponse, HttpSession session, Model model) {
 		
-		List<FaqResponseDto> list = faqService.list();
+		List<NoticeResponseDto> list = noticeService.list();
 		
 		return list;
 		

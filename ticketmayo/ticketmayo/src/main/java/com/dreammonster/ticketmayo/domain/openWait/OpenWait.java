@@ -42,7 +42,7 @@ public class OpenWait extends BaseTimeEntity {
 	private String sitePw;
 	
 	@Column
-	private String applyCost;
+	private int applyCost;
 	
 	@Column
 	private String phone;
@@ -59,8 +59,32 @@ public class OpenWait extends BaseTimeEntity {
 	@Column
 	private String hopeSeat;
 	
+	@Column
+	private String bankName;
+	
+	@Column
+	private String refundAccount;
+	
+	@Column
+	private String accountOwner;
+	
+	@Column
+	private String hopeDay;
+	
+	@Column
+	private String hopeTime;
+	
+	@Column
+	private String depositBank;
+	
+	@Column
+	private String depositAcct;
+	
+	@Column
+	private String depositOwner;
+	
 	@Builder
-	public OpenWait(String playName, String site, int qty, String grade, String siteId, String sitePw, String applyCost, String phone, String userEmail, String status, String birth, String hopeSeat) {
+	public OpenWait(String playName, String site, int qty, String grade, String siteId, String sitePw, int applyCost, String phone, String userEmail, String status, String birth, String hopeSeat, String bankName, String refundAccount, String accountOwner, String hopeDay, String hopeTime, String depositBank, String depositAcct, String depositOwner) {
 		
 		this.playName = playName;
 		this.site = site;
@@ -74,9 +98,17 @@ public class OpenWait extends BaseTimeEntity {
 		this.status = status;
 		this.birth = birth;
 		this.hopeSeat = hopeSeat;
+		this.bankName = bankName;
+		this.refundAccount = refundAccount;
+		this.accountOwner = accountOwner;
+		this.hopeDay = hopeDay;
+		this.hopeTime = hopeTime;
+		this.depositAcct = depositAcct;
+		this.depositBank = depositBank;
+		this.depositOwner = depositOwner;
 	}
 	
-	public void updateStatus(String applyCost, String status) {
+	public void updateStatus(int applyCost, String status) {
 		this.applyCost = applyCost;
 		this.status = status;
 	}

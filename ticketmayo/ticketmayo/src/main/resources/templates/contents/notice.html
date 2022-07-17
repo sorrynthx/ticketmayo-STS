@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="noticeFragment">
+	<!--begin::Content container-->
+	<div id="kt_app_content_container"
+		class="app-container container-fluid">
+
+		<div class="d-flex flex-column flex-xl-row">
+			<!--begin::Content-->
+			<div class="card bg-body mb-9 mb-xl-0 me-lg-9 col-lg-12">
+				<div class="card-body">
+					<!--begin::Faq content-->
+					<div class="m-0">
+						<!--begin::Intro-->
+						<div class="mb-9">
+							<!--begin::Title-->
+							<h4 class="fs-2qx text-gray-800 w-bolder mb-6">티켓마요 공지사항</h4>
+							<!--end::Title-->
+							<!--begin::Text-->
+							<p class="fs-5 fw-bold text-gray-400">티켓마요에서 제공하는 소식을 알려드립니다.</p>
+							<!--end::Text-->
+						</div>
+						<!--end::Intro-->
+						
+						
+						<!--begin::Items-->
+						<div class="m-0 row">
+							<div class="mb-12 col-lg-12">
+								<!-- <h3 class="text-gray-800 fw-bolder mb-2">공지사항</h3>-->
+								<div id="noticeArea"></div>
+							</div>
+						</div>
+						<!--end::Items-->
+					</div>
+					<!--end::Faq content-->
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+		const faqInit = {
+			init: function() {
+				ajaxCall4Json('/notice/api_v1_001', null, 'post' ,function(result){
+					console.log(result);
+					
+					var data = result;
+					
+					var html = '';
+					data.forEach(function(el, index){
+						html += '<div class="m-0">';
+						html += '<div class="d-flex align-items-center collapsible py-3 toggle mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#notice_' + index + '">';
+						html += '<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">';
+						html += '<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">';
+						html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
+						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
+						html += '<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
+						html += '</svg>';
+						html += '</span>';
+						html += '<span class="svg-icon toggle-off svg-icon-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
+						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
+						html += '<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>';
+						html += '<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
+						html += '</svg>';
+						html += '</span>';
+						html += '</div>';
+						html += '<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">' + el.title + '</h4>';
+						html += '</div>';
+						html += '<div id="notice_' + index + '" class="collapse fs-6 ms-1">';
+						html += '<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">';
+						html += '<pre>' + el.content + '</pre>';
+						html += '</div>';
+						html += '</div>';
+						html += '<div class="separator separator-dashed"></div>';
+						html += '</div>';
+					});
+					$('#noticeArea').append(html);
+					
+				
+					
+				});
+			}
+		}
+		faqInit.init();
+	});
+	</script>
+	
+</th:block>
+</html>

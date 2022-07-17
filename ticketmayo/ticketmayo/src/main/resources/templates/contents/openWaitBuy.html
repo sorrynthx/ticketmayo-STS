@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <th:block th:fragment="openWaitBuyFragment">
+	
+	<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+	<script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+
 	<!--begin::Content container-->
 	<div id="kt_app_content_container" class="app-container container-fluid">
 
@@ -89,6 +94,39 @@
 									<!--begin::Col-->
 									<div class="col-lg-12 fv-row fv-plugins-icon-container">
 										<input type="text" id="site" name="site" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" readonly th:value="${site}">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+							희망일 | 회차
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="희망하는 티켓팅 일자 및 공연회차 입니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-6 fv-row fv-plugins-icon-container">
+										<input type="text" id="hopeDay" name="hopeDay" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 dateSelector" placeholder="희망일자 선택">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									
+									<div class="col-lg-6 fv-row fv-plugins-icon-container">
+										<select id="hopeTime" class="form-select mt-1">
+											<option value="1회차">1회차</option>
+											<option value="2회차">2회차</option>
+											<option value="3회차">3회차</option>
+										</select>
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
 									<!--end::Col-->
@@ -315,9 +353,9 @@
 						
 						<div class="row mb-6">
 							<!--begin::Label-->
-							<label class="col-lg-4 col-form-label fw-bolder fs-6">
-								무통장입금
-								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="현재는 무통장 입금만 가능합니다."></i>
+							<label class="col-lg-4 col-form-label fw-bolder fs-6 required">
+								환불계좌등록
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="티켓팅 실패 시, 환불 받을 계좌를 등록합니다. "></i>
 							</label>
 							<!--end::Label-->
 							<!--begin::Col-->
@@ -325,10 +363,64 @@
 								<!--begin::Row-->
 								<div class="row">
 									<!--begin::Col-->
-									<div class="col-lg-12 fv-row fv-plugins-icon-container">
-										<input type="text" id="account" name="account" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="계좌번호" value="기업은행 123-0001-11234421 (예금주: 김*윤)" readonly>
+									<div class="col-lg-4 fv-row fv-plugins-icon-container">
+										<select id="bankName" class="form-select mt-1" aria-label="Select example">
+											<option value="국민은행">국민은행</option>
+											<option value="기업은행">기업은행</option>
+											<option value="농협은행">농협은행</option>
+											<option value="새마을금고">새마을금고</option>
+											<option value="수협은행">수협은행</option>
+											<option value="신한은행">신한은행</option>
+											<option value="우리은행">우리은행</option>
+											<option value="우체국">우체국</option>
+											<option value="저축은행">저축은행</option>
+											<option value="하나은행">하나은행</option>
+											<option value="한국씨티은행">한국씨티은행</option>
+											<option value="SC제일은행">SC제일은행</option>
+											<option value="카카오뱅크">카카오뱅크</option>
+											<option value="케이뱅크">케이뱅크</option>
+											<option value="토스뱅크">토스뱅크</option>
+										</select>
+									</div>
+									<div class="col-lg-5 fv-row fv-plugins-icon-container">
+										<input type="text" id="refundAccount" name="refundAccount" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="계좌번호" value="">
 										<div class="fv-plugins-message-container invalid-feedback"></div>
 									</div>
+									<div class="col-lg-3 fv-row fv-plugins-icon-container">
+										<input type="text" id="accountOwner" name="accountOwner" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="예금주" value="">
+										<div class="fv-plugins-message-container invalid-feedback"></div>
+									</div>
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bolder fs-6">
+								입금방법(계좌이체)
+								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="입금 확인 후 티켓팅 진행합니다."></i>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="col-lg-4 fv-row fv-plugins-icon-container">
+										<input type="text" id="depositBank" name="depositBank" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" value="기업은행" readonly>
+									</div>
+									<div class="col-lg-5 fv-row fv-plugins-icon-container">
+										<input type="text" id="depositAcct" name="depositAcct" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" value="123-0001-11234421" readonly>
+									</div>
+									<div class="col-lg-3 fv-row fv-plugins-icon-container">
+										<input type="text" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" value="김*윤" readonly>
+										<input type="hidden" id="depositOwner" name="depositOwner" class="form-control form-control-lg form-control-flush mb-3 mb-lg-0" value="김택윤" readonly>
+									</div>
+									<div class="fv-plugins-message-container invalid-feedback">❗위 계좌로 수고비 입금하면 입금 확인 후 티켓팅 진행합니다.</div>
 									<!--end::Col-->
 									
 								</div>
@@ -340,7 +432,10 @@
 					</div>
 					<!--end::Body-->
 					
-					<div class="card-footer d-flex justify-content-end py-6 px-9">
+					<div class="card-footer d-flex flex-stack flex-wrap py-6 px-9">
+						<div class="my-1 me-5">
+							<div class="fv-plugins-message-container invalid-feedback">✅ 티켓팅 실패 시, 환불계좌로 전액 환불됩니다.</div>
+						</div>
 						<button type="button" class="btn btn-primary" id="applyBtn">티켓팅 신청</button>
 					</div>
 					
@@ -385,7 +480,20 @@
 				});
 			},
 			
+			flatpickrInit: function () {
+				
+				var dateSelector = document.querySelector('.dateSelector');
+				flatpickr.localize(flatpickr.l10ns.ko);
+				flatpickr(dateSelector);
+				
+				$("#hopeDay").flatpickr({
+					local: 'ko',
+					minDate: 'today'
+				});
+			},
+			
 			init: function () {
+
 				var _this = this;
 					
 				const button = document.getElementById('applyBtn');
@@ -405,41 +513,47 @@
 				        }
 				    }).then(function(result) {
 				      if (result.isConfirmed) {
-				        
 				        var saveResult = _this.save();
-				        
 				        if (!saveResult) return false;
-				        
-				        Swal.fire({
-				          title: '감사합니다!',
-				          text: '입금 확인 후 티켓팅 신청합니다.',
-				          icon: 'success'
-				        }).then(function() {
-				          console.log('success');
-				        });
-				      } else {
-				        Swal.fire("취소", "계좌이체 후 티켓팅 신청해주세요.", "error");
-				      }
+				      } else Swal.fire("잠시만요...", "계좌이체 후 티켓팅 신청해주세요.", "error");
 				    });
 				});
 			},
 			
 			save: function () {
 				var data = {
-					playName: $('#playName').val(),
-					site: $('#site').val(),
-					qty: $('#qty').val(),
+					playName: $('#playName').val().trim(),
+					site: $('#site').val().trim(),
+					hopeDay: $('#hopeDay').val(),
+					hopeTime: $('#hopeTime option:selected').val(),
+					qty: $('#qty').val().trim(),
 					grade: $('input[name=grade]:checked').val(),
-					siteId: $('#siteId').val(),
-					sitePw: $('#sitePw').val(),
-					phone: $('#phone').val(),
-					applyCost: $('#applyCost').val(),
-					userEmail: $('#userEmail').val(),
-					hopeSeat: $('#hopeSeat').val(),
-					birth: $('#birth').val()
+					siteId: $('#siteId').val().trim(),
+					sitePw: $('#sitePw').val().trim(),
+					phone: $('#phone').val().trim(),
+					applyCost: $('#applyCost').val().trim(),
+					userEmail: $('#userEmail').val().trim(),
+					hopeSeat: $('#hopeSeat').val().trim(),
+					birth: $('#birth').val().trim(),
+					bankName: $('#bankName option:selected').val(),
+					refundAccount: $('#refundAccount').val().trim(),
+					accountOwner: $('#accountOwner').val().trim(),
+					depositBank: $('#depositBank').val(),
+					depositAcct: $('#depositAcct').val(),
+					depositOwner: $('#depositOwner').val()
 				}
 				
 				console.log(data);
+				
+				if (data.userEmail == '') {
+					alert('로그인 후 이용해주세요.');
+					return false;
+				}
+				
+				if (data.hopeDay == '') {
+					alert('희망일자를 선택해주세요.');
+					return false;
+				}
 				
 				if (data.qty == '') {
 					alert('매수를 입력하세요.');
@@ -476,20 +590,50 @@
 					return false;
 				}
 				
-				if (data.userEmail == '') {
-					alert('로그인 후 이용해주세요.');
+				if (data.refundAccount == '') {
+					alert('환불 받을 계좌를 입력하세요.');
+					return false;
+				}
+				
+				if (data.accountOwner == '') {
+					alert('환불 예금주 이름을 입력하세요.');
 					return false;
 				}
 				
 				ajaxCall4Json('/openWait/api_v1_002', data, 'post' ,function(result){
 					console.log(result);
+					
+					if (result != -1) {
+						Swal.fire({
+				          title: '감사합니다!',
+				          html: '입금 확인 후 티켓팅 진행하며<br/>결과는 입력하신 핸드폰 번호로 알려드립니다.',
+				          icon: 'success',
+				          buttonsStyling: false,
+				          confirmButtonText: "확인",
+				          customClass: {
+				            confirmButton: "btn btn-primary",
+				          }
+				        }).then(function() {
+				          submitPost('/openWaitInvoice', {'reqId': result});
+				        });
+					} 
+					if (result == -1) {
+						Swal.fire({
+				          title: '신청 중복',
+				          html: '신청한 기록이 있습니다.<br/>내정보 - 티켓팅 내역을 확인하세요.',
+				          icon: 'warning',
+				          buttonsStyling: false,
+				          confirmButtonText: "확인",
+				          customClass: { confirmButton: "btn btn-primary" }
+				        });
+					} 
 				});
 			}
 		};
 		
 		openWaitInit.init();
 		openWaitInit.gradeFn();
-		
+		openWaitInit.flatpickrInit();
 	})
 	</script>
 

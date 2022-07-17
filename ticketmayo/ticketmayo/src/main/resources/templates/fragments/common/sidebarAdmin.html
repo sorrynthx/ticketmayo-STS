@@ -22,8 +22,8 @@
 			<!--begin::Sidebar menu-->
 			<div class="app-sidebar-menu app-sidebar-menu-arrow hover-scroll-overlay-y my-5 my-lg-5 px-3" id="kt_app_sidebar_menu_wrapper" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_toolbar, #kt_app_sidebar_footer" data-kt-scroll-offset="0">
 				<!--begin::Menu-->
-				<div class="menu menu-column menu-sub-indention menu-active-bg fw-bold" id="#kt_sidebar_menu" data-kt-menu="true">
-					<div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+				<div class="menu menu-column menu-sub-indention menu-active-bg fw-bold" id="kt_sidebar_menu1" data-kt-menu="true">
+					<div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
 						<span class="menu-link">
 							<span class="menu-icon">
 								<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
@@ -40,13 +40,14 @@
 						</span>
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
-								<a class="menu-link" href="/openWaitAdmin">
+								<a class="menu-link" href="/openWait">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
 									<span class="menu-title">오픈예정 티켓</span>
 								</a>
 							</div>
+							
 							<div class="menu-item">
 								<a class="menu-link" href="/secondTicket">
 									<span class="menu-bullet">
@@ -55,14 +56,40 @@
 									<span class="menu-title">양도티켓 판매</span>
 								</a>
 							</div>
+							
 							<div class="menu-item">
-								<a class="menu-link" href="/community">
+								<a class="menu-link" href="/tip">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">커뮤니티</span>
+									<span class="menu-title">뮤지컬 팁 게시판</span>
 								</a>
 							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/muse">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">뮤즈 게시판</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/humor">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">유머 게시판</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/notice">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">공지사항</span>
+								</a>
+							</div>
+							
 							<div class="menu-item">
 								<a class="menu-link" href="/faq">
 									<span class="menu-bullet">
@@ -71,6 +98,7 @@
 									<span class="menu-title">자주찾는질문</span>
 								</a>
 							</div>
+							
 							<div class="menu-item">
 								<a class="menu-link" href="/myInfo">
 									<span class="menu-bullet">
@@ -83,6 +111,62 @@
 					</div>
 				</div>
 				<!--end::Menu-->
+				
+				<div class="menu menu-column menu-sub-indention menu-active-bg fw-bold" id="kt_sidebar_menu2" data-kt-menu="true">
+					<div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+						<span class="menu-link">
+							<span class="menu-icon">
+								<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
+								<span class="svg-icon svg-icon-5">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+										<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor" />
+										<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor" />
+									</svg>
+								</span>
+								<!--end::Svg Icon-->
+							</span>
+							<span class="menu-title">티켓마요 관리</span>
+							<span class="menu-arrow"></span>
+						</span>
+						<div class="menu-sub menu-sub-accordion">
+							
+							<div class="menu-item">
+								<a class="menu-link" href="/openWaitAdmin">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">오픈예정 티켓 관리</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="#">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">양도티켓 판매 관리</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/noticeAdmin">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">공지사항 관리</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/faqAdmin">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">자주찾는질문 관리</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
 			</div>
 			<!--end::Slidebar menu -->
 			
@@ -135,51 +219,7 @@
 		</div>
 		<!--end::sidebar-->
 		
-		<!-- script -->
-	    <script type="text/javascript">
-	    	if (typeof jQuery == 'undefined') {
-	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
-	      	} 
-	    
-	    	/* active link url */
-			const url = window.location.pathname;	   		
-	   		
-	   		$('.menu-link').each(function () {
-	   	   		var currUrl = $(this).attr('href');
-	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
-	   	   	});
-	   		
-	   		/* top title description */
-	   		switch (url) {
-		    case '/openWait' :
-		      	$('#topTitle').text('오픈예정 티켓');
-		      	$('#topDescription').text('이번 주 오픈 티켓 확인!');
-		      	break;
-		    case '/openWaitBuyMusical' :
-		      	$('#topTitle').text('오픈예정 티켓 신청');
-		      	$('#topDescription').text('간편하게 티켓팅 신청');
-		      	break;
-		    case '/secondTicket' :
-		    	$('#topTitle').text('양도티켓 판매');
-			  	$('#topDescription').text('양도된 티켓을 빠르게 구매!');
-		      break;
-		    case '/secondTicketPayment' :
-		    	$('#topTitle').text('양도티켓 구매');
-			  	$('#topDescription').text('양도티켓 구매 진행중...');
-		      break; 
-		    case '/community' :
-		    	$('#topTitle').text('커뮤니티');
-			  	$('#topDescription').text('다양한 콘텐츠를 소개!');
-		      break;
-		    case '/faq' :
-		    	$('#topTitle').text('자주 찾는 질문');
-			  	$('#topDescription').text('많이 물어보는 질문!');
-		      break;
-		    default :
-		      break;
-		  	}
-	   		
-	    </script>
+		
 		
 	</th:block>
 	

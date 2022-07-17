@@ -56,11 +56,35 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a class="menu-link" href="/community">
+								<a class="menu-link" href="/tip">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">커뮤니티</span>
+									<span class="menu-title">뮤지컬 팁 게시판</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/muse">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">뮤즈 게시판</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/humor">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">유머 게시판</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a class="menu-link" href="/notice">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">공지사항</span>
 								</a>
 							</div>
 							<div class="menu-item">
@@ -135,55 +159,7 @@
 		</div>
 		<!--end::sidebar-->
 		
-		<!-- script -->
-	    <script type="text/javascript">
-	    	if (typeof jQuery == 'undefined') {
-	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
-	      	}
-	      		    
-	    	/* active link url */
-			const url = window.location.pathname;	   		
-	   		
-	   		$('.menu-link').each(function () {
-	   	   		var currUrl = $(this).attr('href');
-	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
-	   	   	});
-	   		
-	   		/* top title description */
-	   		switch (url) {
-		    case '/openWait' :
-		      	$('#topTitle').text('오픈예정 티켓');
-		      	$('#topDescription').text('이번 주 오픈 티켓 확인!');
-		      	break;
-		    case '/openWaitBuyMusical' :
-		      	$('#topTitle').text('오픈예정 티켓 신청');
-		      	$('#topDescription').text('간편하게 티켓팅 신청');
-		      	break;
-		    case '/secondTicket' :
-		    	$('#topTitle').text('양도티켓 판매');
-			  	$('#topDescription').text('양도된 티켓을 빠르게 구매!');
-		      break;
-		    case '/secondTicketPayment' :
-		    	$('#topTitle').text('양도티켓 구매');
-			  	$('#topDescription').text('양도티켓 구매 진행중...');
-		      break; 
-		    case '/community' :
-		    	$('#topTitle').text('커뮤니티');
-			  	$('#topDescription').text('다양한 콘텐츠를 소개!');
-		      break;
-		    case '/faq' :
-		    	$('#topTitle').text('자주 찾는 질문');
-			  	$('#topDescription').text('많이 물어보는 질문!');
-		      break;
-		    case '/myInfo' :
-		    	$('#topTitle').text('프로필');
-			  	$('#topDescription').text('');
-		      break;
-		    default :
-		      break;
-		  	}
-	   		
-	    </script>
+		
 		
 	</th:block>
 	

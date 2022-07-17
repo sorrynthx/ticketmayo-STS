@@ -21,3 +21,29 @@ function ajaxCall4Json(apiURL, request, method, callback){
 		timeout: 60000
 	});
 }
+
+/****************************************************************
+ * submitPost(url, params)
+ *  : 동적으로 form 생성하여 post 전달
+ * examples  :
+ * var mapData = {'name1':'value1', 'name2':'value2'}
+ * submitPost('/abc', mapData); -> /abc 경로로 mapData post 전송 
+ * 
+ ****************************************************************/
+function submitPost(url, params) {
+	var form = document.createElement("form");
+    form.setAttribute("charset", "UTF-8");
+    form.setAttribute("method", "POST");  //Post 방식
+    form.setAttribute("action", url); //요청 보낼 주소
+
+    for(var key in params) {
+		var hiddenField = document.createElement("input");
+    	hiddenField.setAttribute("type", "hidden");
+    	hiddenField.setAttribute("name", key);
+    	hiddenField.setAttribute("value", params[key]);
+    	form.appendChild(hiddenField);
+	}
+
+    document.body.appendChild(form);
+	form.submit();
+}

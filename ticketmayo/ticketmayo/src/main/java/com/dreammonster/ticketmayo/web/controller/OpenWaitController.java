@@ -1,12 +1,12 @@
 package com.dreammonster.ticketmayo.web.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.dreammonster.ticketmayo.config.auth.LoginUser;
 import com.dreammonster.ticketmayo.config.auth.dto.SessionUser;
@@ -32,6 +31,16 @@ import lombok.RequiredArgsConstructor;
 public class OpenWaitController {
 	
 	private final OpenWaitService openWaitService;
+	
+	@PostMapping("/openWaitWelcome")
+	public String openWaitWelcome(@RequestParam String subject, @RequestParam String site, Model model, @LoginUser SessionUser naverUser) {
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
+		model.addAttribute("subject", subject);
+		model.addAttribute("site", site);
+		return "openWaitWelcome";
+	}
 	
 	@GetMapping("/openWait")
 	public String openWait(Model model, @LoginUser SessionUser naverUser) {
@@ -72,6 +81,27 @@ public class OpenWaitController {
 		
 		if (cnt != 0) return -1L; 
 		else return openWaitService.save(openWait);
+	}
+	
+	@PostMapping("/openWaitInvoice")
+	public String openWaitInvoice(@RequestParam Long reqId, Model model, @LoginUser SessionUser naverUser) {
+		
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
+		
+		Optional<OpenWait> owOptinal = openWaitService.findById(reqId);
+		
+		owOptinal.ifPresent(ow -> {
+		    if (ow.getId() > -1) {
+		    	model.addAttribute("ow", ow);
+		    	model.addAttribute("owCheck", true);
+		    } else {
+		    	model.addAttribute("owCheck", false);
+		    }
+		});
+		
+		return "openWaitInvoice";
 	}
 	
 }

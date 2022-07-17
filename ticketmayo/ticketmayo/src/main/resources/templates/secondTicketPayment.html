@@ -27,7 +27,22 @@
 				
 				<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 					<!-- SIDEBAR -->
-					<th:block th:replace="fragments/common/sidebar :: sidebarFragment"></th:block>
+					<span th:if="${naverUser}">
+						<span th:switch="${#strings.toString(naverUser.role)}">
+							<span th:case="'GUEST'">
+								<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+							</span>
+							<span th:case="'ADMIN'">
+								<th:block th:replace="fragments/common/sidebarAdmin :: sidebarAdminFragment" ></th:block>
+							</span>
+							<span th:case="*">
+								<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+							</span>
+						</span>
+					</span>
+					<span th:unless="${naverUser}">
+						<th:block th:replace="fragments/common/sidebar :: sidebarFragment" ></th:block>
+					</span>
 					
 					<!--begin::Main-->
 					<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
