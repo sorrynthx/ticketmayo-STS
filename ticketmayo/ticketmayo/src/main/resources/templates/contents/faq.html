@@ -1,198 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <th:block th:fragment="faqFragment">
-	<!--begin::Content container-->
-	<div id="kt_app_content_container"
-		class="app-container container-fluid">
-
-		<div class="d-flex flex-column flex-xl-row">
-			<!--begin::Content-->
-			<div class="card bg-body mb-9 mb-xl-0 me-lg-9 col-lg-12">
-				<div class="card-body">
-					<!--begin::Faq content-->
-					<div class="m-0">
-						<!--begin::Intro-->
-						<div class="mb-9">
-							<!--begin::Title-->
-							<h4 class="fs-2qx text-gray-800 w-bolder mb-6">티켓마요 FAQ</h4>
-							<!--end::Title-->
-							<!--begin::Text-->
-							<p class="fs-5 fw-bold text-gray-400">티켓마요에서 제공하는 서비스에 대해서 자주 찾는 질문을 알려드립니다.</p>
-							<!--end::Text-->
-						</div>
-						<!--end::Intro-->
-						
-						
-						<!--begin::Items-->
-						<div class="m-0 row">
-							<div class="mb-12 col-lg-6">
-								<h3 class="text-gray-800 fw-bolder mb-2">결제 관련</h3>
-								<div id="faqArea1"></div>
-							</div>
-							
-							<div class="mb-12 col-lg-6">
-								<h3 class="text-gray-800 fw-bolder mb-2">예매 관련</h3>
-								<div id="faqArea2"></div>
-							</div>
-							
-							<div class="mb-12 col-lg-6">
-								<h3 class="text-gray-800 fw-bolder mb-2">배송 관련</h3>
-								<div id="faqArea3"></div>
-							</div>
-							
-							<div class="mb-12 col-lg-6">
-								<h3 class="text-gray-800 fw-bolder mb-2">기타</h3>
-								<div id="faqArea4"></div>
-							</div>
-														
-						</div>
-						<!--end::Items-->
-					</div>
-					<!--end::Faq content-->
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+	<style>
+	.title {max-width: 75vw;}
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+		<!-- page content goes here -->
+		<div class="container my-5 text-center">
+            <h2 class="font-weight-bold">📌 자주 찾는 질문</h2>
+            <h5 class="font-weight-medium">혹시 더 궁금하다면 👉 <br> <a href="javascript:void(0);" target="_blank">카카오톡</a>으로 문의주세요.</h5>
+        </div>
+		
+		<div class="container ">
+            <div class="accordion" id="myaccordion">
+                <div class="card">
+                    <div class="card-header p-0" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Collapsible Group Item #1
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#myaccordion">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-0" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Collapsible Group Item #2
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#myaccordion">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-0" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Collapsible Group Item #3
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#myaccordion">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        
+        
+    </main>
+    <!-- End of page content -->
 	
 	<script>
+	"use strict"
 	$(document).ready(function(){
-		const faqInit = {
-			init: function() {
-				ajaxCall4Json('/faq/api_v1_001', null, 'post' ,function(result){
-					
-					var data = result;
-					var book = data.filter(faq => faq.faqGroup == '예매');
-					var pay = data.filter(faq => faq.faqGroup == '결제');
-					var delivery = data.filter(faq => faq.faqGroup == '배송');
-					var etc = data.filter(faq => faq.faqGroup == '기타');
-					
-					
-					var html = '';
-					pay.forEach(function(el, index){
-						html += '<div class="m-0">';
-						html += '<div class="d-flex align-items-center collapsible py-3 toggle mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#pay_' + index + '">';
-						html += '<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">';
-						html += '<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">';
-						html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '<span class="svg-icon toggle-off svg-icon-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>';
-						html += '<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '</div>';
-						html += '<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">' + el.title + '</h4>';
-						html += '</div>';
-						html += '<div id="pay_' + index + '" class="collapse fs-6 ms-1">';
-						html += '<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">';
-						html += '<pre>' + el.content + '</pre>';
-						html += '</div>';
-						html += '</div>';
-						html += '<div class="separator separator-dashed"></div>';
-						html += '</div>';
-					});
-					$('#faqArea1').append(html);
-					
-					var html = '';
-					book.forEach(function(el, index){
-						html += '<div class="m-0">';
-						html += '<div class="d-flex align-items-center collapsible py-3 toggle mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#book_' + index + '">';
-						html += '<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">';
-						html += '<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">';
-						html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '<span class="svg-icon toggle-off svg-icon-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>';
-						html += '<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '</div>';
-						html += '<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">' + el.title + '</h4>';
-						html += '</div>';
-						html += '<div id="book_' + index + '" class="collapse fs-6 ms-1">';
-						html += '<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">';
-						html += '<pre>' + el.content + '</pre>';
-						html += '</div>';
-						html += '</div>';
-						html += '<div class="separator separator-dashed"></div>';
-						html += '</div>';
-					});
-					$('#faqArea2').append(html);
-					
-					var html = '';
-					delivery.forEach(function(el, index){
-						html += '<div class="m-0">';
-						html += '<div class="d-flex align-items-center collapsible py-3 toggle mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#delivery_' + index + '">';
-						html += '<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">';
-						html += '<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">';
-						html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '<span class="svg-icon toggle-off svg-icon-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>';
-						html += '<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '</div>';
-						html += '<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">' + el.title + '</h4>';
-						html += '</div>';
-						html += '<div id="delivery_' + index + '" class="collapse fs-6 ms-1">';
-						html += '<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">';
-						html += '<pre>' + el.content + '</pre>';
-						html += '</div>';
-						html += '</div>';
-						html += '<div class="separator separator-dashed"></div>';
-						html += '</div>';
-					});
-					$('#faqArea3').append(html);
-					
-					var html = '';
-					etc.forEach(function(el, index){
-						html += '<div class="m-0">';
-						html += '<div class="d-flex align-items-center collapsible py-3 toggle mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#etc_' + index + '">';
-						html += '<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">';
-						html += '<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">';
-						html += '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '<span class="svg-icon toggle-off svg-icon-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">';
-						html += '<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor"></rect>';
-						html += '<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"></rect>';
-						html += '<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"></rect>';
-						html += '</svg>';
-						html += '</span>';
-						html += '</div>';
-						html += '<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">' + el.title + '</h4>';
-						html += '</div>';
-						html += '<div id="etc_' + index + '" class="collapse fs-6 ms-1">';
-						html += '<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">';
-						html += '<pre>' + el.content + '</pre>';
-						html += '</div>';
-						html += '</div>';
-						html += '<div class="separator separator-dashed"></div>';
-						html += '</div>';
-					});
-					$('#faqArea4').append(html);
-					
-				});
-			}
-		}
-		faqInit.init();
+        
 	});
 	</script>
 	

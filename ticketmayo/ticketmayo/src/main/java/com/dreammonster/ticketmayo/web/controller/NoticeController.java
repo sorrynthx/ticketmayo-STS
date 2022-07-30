@@ -30,7 +30,7 @@ public class NoticeController {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "notice";
+		return "html/notice";
 	}
 	
 	@ResponseBody

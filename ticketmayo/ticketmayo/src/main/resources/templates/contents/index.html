@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="indexFragment">
+	<style>
+	.ribbon-label {
+		right: -5px;
+		border-top-left-radius: 0.95rem;
+    	border-bottom-left-radius: 0.95rem;
+    	display: flex;
+	    justify-content: left;
+	    align-items: center;
+	    padding: 5px 10px;
+	    position: absolute;
+	    z-index: 1;
+	    background-color: #6121D2D9;
+	    box-shadow: 0px -1px 5px 0px rgb(0 0 0 / 10%);
+	    color: #FFFFFF;
+	    top: 10%;
+	    right: 0;
+	    transform: translateX(5px) translateY(-50%);
+	}
+	
+	.ribbon-label2 {
+		right: -5px;
+		border-top-left-radius: 0.95rem;
+    	border-bottom-left-radius: 0.95rem;
+    	display: flex;
+	    justify-content: left;
+	    align-items: center;
+	    padding: 5px 10px;
+	    position: absolute;
+	    z-index: 1;
+	    background-color: #6121D2D9;
+	    box-shadow: 0px -1px 5px 0px rgb(0 0 0 / 10%);
+	    color: #FFFFFF;
+	    top: 80%;
+	    right: 0;
+	    transform: translateX(5px) translateY(-50%);
+	}
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+        <!-- page content goes here -->
+        <div class="tab-content" id="myTabContent">
+        	<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        		<div class="container-fluid py-3 bg-white border-bottom">
+        			<!-- Swiper -->
+                    <div class="swiper-container swiper-stories">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201409%2F20140922203416508-3731873.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220602114915419.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202111%2F20211108164214238.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202201%2F20220109133545653.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202207%2F20220714134647325.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202207%2F20220714134706189.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220613152256917.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202203%2F2022032522010633.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202203%2F20220325220125416.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="swiper-slide read w-auto">
+                                <a class="col-auto px-2" data-toggle="modal" data-target="#statusmodal">
+                                    <figure class="avatar avatar-70 rounded-circle">
+                                        <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202002%2F20200218142933542.png" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        		</div>
+        		
+        		<div class="container mt-3">
+                    <h5 class="page-subtitle">🎫 오픈예정 공연</h5>
+                    <div class="row">
+                        <div class="swiper-container swiper-stories multiple">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3"></figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">데스노트</span>
+                                            <button class="btn btn-default" onclick="javascript:location.href='/comingsoon'">티켓팅 신청</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=210x300&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220207_165%2F1644201140882Pb7Tb_JPEG%2F269_image_url_1644201140867.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">아이다</span>
+                                            <button class="btn btn-default" onclick="javascript:location.href='/comingsoon'">티켓팅 신청</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220518_220%2F1652848452700MRD8P_JPEG%2F269_image_url_1652848452648.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">킹키부츠</span>
+                                            <button class="btn btn-default" onclick="javascript:location.href='/comingsoon'">티켓팅 신청</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220705_99%2F1656988054891n6fe3_JPEG%2F269_28378242_image_url_1656988054852.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">미세스 다웃파이어</span>
+                                            <button class="btn btn-default" onclick="javascript:location.href='/comingsoon'">티켓팅 신청</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">🎟️ 인기 뮤지컬</h5>
+                    <div class="row">
+                        <div class="swiper-container swiper-stories multiple">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3"></figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">데스노트</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">데스노트</h6>
+                                            <p class="mb-0 text-mute small">세종문화회관</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=210x300&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220207_165%2F1644201140882Pb7Tb_JPEG%2F269_image_url_1644201140867.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">아이다</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">아이다</h6>
+                                            <p class="mb-0 text-mute small">샤롯데씨어터</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220518_220%2F1652848452700MRD8P_JPEG%2F269_image_url_1652848452648.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">킹키부츠</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">킹키부츠</h6>
+                                            <p class="mb-0 text-mute small">충무아트센터 대극장</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220705_99%2F1656988054891n6fe3_JPEG%2F269_28378242_image_url_1656988054852.jpg" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">미세스 다웃파이어</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">미세스 다웃파이어</h6>
+                                            <p class="mb-0 text-mute small">샤롯데씨어터</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">🎟️ 인기 콘서트</h5>
+                    <div class="row">
+                        <div class="swiper-container swiper-stories multiple">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="http://tkfile.yes24.com/upload2/perfblog/202207/20220720/20220720-42946_1.jpg/dims/quality/70/" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3"></figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">10CM Summer Concert [Kwon Jeongyeol]</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">10CM Summer Concert [Kwon Jeongyeol]</h6>
+                                            <p class="mb-0 text-mute small">노들섬 라이브하우스</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="http://tkfile.yes24.com/upload2/perfblog/202207/20220712/20220712-42862.jpg/dims/quality/70/" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">2022 VIVIZ 팬미팅</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">2022 VIVIZ 팬미팅</h6>
+                                            <p class="mb-0 text-mute small">YES24 LIVE HALL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="http://tkfile.yes24.com/upload2/perfblog/202204/20220404/20220404-36086.jpg/dims/quality/70/" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">크리스토퍼 슈퍼콘서트 2022 내한공연</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">크리스토퍼 내한공연</h6>
+                                            <p class="mb-0 text-mute small">YES24 LIVE HALL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide w-auto px-2">
+                                    <div class="card w-180 mb-4 position-relative overflow-hidden text-white">
+                                        <div class="background">
+                                            <img src="http://tkfile.yes24.com/upload2/perfblog/202207/20220720/20220720-42563.jpg/dims/quality/70/" alt="">
+                                        </div>
+                                        <div class="card-body text-center z-1 h-100px">
+                                        </div>
+                                        <div class="card-footer border-0 z-1 text-center">
+                                            <figure class="avatar-40 mb-3">
+                                            </figure>
+                                            <span class="ribbon-label text-truncate" style="max-width: 180px;">케시 내한공연</span>
+                                            <h6 class="mb-1 text-truncate" style="max-width: 140px;">케시 내한공연</h6>
+                                            <p class="mb-0 text-mute small">YES24 LIVE HALL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">👉 [김배우] 관련 글</h5>
+                    <div class="card mb-4">
+                        <div class="card-header border-bottom">
+                            <div class="media">
+                                <figure class="avatar avatar-40 mr-2">
+                                    <img src="https://blogpfthumb-phinf.pstatic.net/MjAyMTAzMjdfMTI4/MDAxNjE2ODE3MjA3Mjgz.dBr_43Jzy38kzy5oy3ZYLCZNPb8AZkt3GBmlOsz5Km8g.54U3yFqLl3gzKAT16fhdxmxwj1dwXxSmmVb0IM9ea1gg.PNG.lule123/profileImage.png?type=s1" alt="Generic placeholder image">
+                                </figure>
+                                <div class="media-body">
+                                	<!-- se-image-resource : image class for api -->
+                                	<!-- .se-documentTitle > div > div > div.blog2_container > span.writer > span.area_profile > a > img   : 프로파일 -->
+                                    <h6 class="mb-1">RULAF_</h6>
+                                    <p class="mb-0 text-mute small">20220726</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0 text-mute">
+								신영숙 뮤지컬 너무 보고싶었는데 진짜 기대만발이었음 신영숙은 영상보단 무조건 라이브로 들어야되고 공연장에 있어야된다길래 총총 그리고 <b>박효신</b>은 못했지만 박강현이 있다! 잘생쁨 배우.. 1부 끝!...                            
+                            </p>
+                        </div>
+                        <div class="card-footer border-top bg-light">
+                            <p class="small"><b><a href="https://blog.naver.com/lule123" target="_blank">https://blog.naver.com/lule123</a></b></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header border-bottom">
+                            <div class="media">
+                                <figure class="avatar avatar-40 mr-2">
+                                    <img src="https://blogpfthumb-phinf.pstatic.net/MjAyMjA3MDlfMyAg/MDAxNjU3MzcyMjQ2MDMx.I8BUiJzQwcVGetYcOfEuX4Zj6Rx1EoQvDVTsJ1Mn1Dcg.dvKSuMmD3ynGwS5nVP231yiiiQ7vjLzCuDou5YzEJ4Qg.PNG.brookyewon/profileImage.png?type=s1" alt="Generic placeholder image">
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mb-1">qwer7878</h6>
+                                    <p class="mb-0 text-mute small">20220726</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0 text-mute">
+                            	180717 <b>박효신</b> 정성화 민경아 신영숙 김나윤 (초고화질 Full /줌ㅇ/리금,교환극자제) 180724 <b>박효신</b> 이수빈 양준모 정선아 고화질 full 교환자제 180825밤 박강현 이수빈 양준모 정선아 강태을... 
+                            </p>
+                        </div>
+                        <!-- 이미지 스크래핑 가능하면 <div class="card-img p-0">
+                            <img src="assets/img/hero6.jpg" alt="" class="w-100">
+                        </div>-->
+                        <div class="card-footer border-top bg-light">
+                            <p class="small"><b><a href="https://blog.naver.com/wjddnrla999" target="_blank">https://blog.naver.com/wjddnrla999</a></b></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header border-bottom">
+                            <div class="media">
+                                <figure class="avatar avatar-40 mr-2">
+                                    <img src="https://blogpfthumb-phinf.pstatic.net/MjAyMTAzMjdfMTI4/MDAxNjE2ODE3MjA3Mjgz.dBr_43Jzy38kzy5oy3ZYLCZNPb8AZkt3GBmlOsz5Km8g.54U3yFqLl3gzKAT16fhdxmxwj1dwXxSmmVb0IM9ea1gg.PNG.lule123/profileImage.png?type=s1" alt="Generic placeholder image">
+                                </figure>
+                                <div class="media-body">
+                                	<!-- se-image-resource : image class for api -->
+                                	<!-- .se-documentTitle > div > div > div.blog2_container > span.writer > span.area_profile > a > img   : 프로파일 -->
+                                    <h6 class="mb-1">RULAF_</h6>
+                                    <p class="mb-0 text-mute small">20220726</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0 text-mute">
+								신영숙 뮤지컬 너무 보고싶었는데 진짜 기대만발이었음 신영숙은 영상보단 무조건 라이브로 들어야되고 공연장에 있어야된다길래 총총 그리고 <b>박효신</b>은 못했지만 박강현이 있다! 잘생쁨 배우.. 1부 끝!...                            
+                            </p>
+                        </div>
+                        <div class="card-footer border-top bg-light">
+                            <p class="small"><b><a href="https://blog.naver.com/lule123" target="_blank">https://blog.naver.com/lule123</a></b></p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header border-bottom">
+                            <div class="media">
+                                <div class="icons icon-circle icon-40 bg-light-primary text-primary mr-3">
+                                    <i class="material-icons vm">public</i>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="my-0">바로 ON [스폰서 광고]</h6>
+                                    <p class="text-mute mb-0">손목 야광봉 실리콘 입장 콘서트 용품</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <img src="https://shop-phinf.pstatic.net/20211123_57/1637646214885ckfNY_JPEG/6vy3b0o_20211123131440930220.jpg?type=m510" class="w-100">
+                        </div>
+                        <div class="card-footer text-center border-top">
+                            <p class="text-mute small mb-0">
+                            	<b><a href="https://smartstore.naver.com/baro_on/products/6035073475?NaPm=ct%3Dl61ow3vc%7Cci%3D5fefcfc8394873e64c6f8b6a0bd803273af5be21%7Ctr%3Dslsl%7Csn%3D4881925%7Chk%3Def38c777e38c7b538771a70576cab505ebb6bba9" target="_blank">방문</a></b>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">😁 커뮤니티 유머글</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="media mb-4">
+                                <figure class="avatar avatar-50 mr-3">
+                                    에펨
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-1">오늘자 빠니보틀 인스타 스토리</h6>
+                                    <p class="small text-mute">2022-07-26 11:37</p>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="media mb-4">
+                                <figure class="avatar avatar-50 mr-3">
+                                    오유
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-1 text-truncate" style="max-width: 250px;">씨름부 아이에게 먹일 감자튀김이 개망하자 백종원이 한일.jpg</h6>
+                                    <p class="small text-mute">2022-07-26 11:37</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="media mb-4">
+                                <figure class="avatar avatar-50 mr-3">
+                                    루리
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-1 text-truncate" style="max-width: 250px;">씨름부 아이에게 먹일 감자튀김이 개망하자 백종원이 한일.jpg</h6>
+                                    <p class="small text-mute">2022-07-26 11:37</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="media mb-4">
+                                <figure class="avatar avatar-50 mr-3">
+                                    뽐뿌
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-1 text-truncate" style="max-width: 250px;">씨름부 아이에게 먹일 감자튀김이 개망하자 백종원이 한일.jpg</h6>
+                                    <p class="small text-mute">2022-07-26 11:37</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="media mb-4">
+                                <figure class="avatar avatar-50 mr-3">
+                                    클리앙
+                                </figure>
+                                <div class="media-body">
+                                    <h6 class="mt-1 mb-1 text-truncate" style="max-width: 250px;">씨름부 아이에게 먹일 감자튀김이 개망하자 백종원이 한일.jpg</h6>
+                                    <p class="small text-mute">2022-07-26 11:37</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">✅ 티켓팅 성공 내역</h5>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="card mb-4 position-relative overflow-hidden text-white">
+                                <div class="background">
+                                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2254F74954D4C8D302785D" alt="">
+                                </div>
+                                <div class="card-header border-0 bg-none">
+                                    <div class="media">
+                                        <div class="media-body">
+                                        	<span class="ribbon-label2 text-truncate" style="max-width: 250px;">웃는 남자 VIP 2022-07-15(토)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center z-1 h-100px">
+
+                                </div>
+                                <div class="card-footer border-0 z-1">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h6 class="mb-1">웃는 남자</h6>
+                                            <p class="mb-0 text-mute small">2022-07-15(토) | VIP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card mb-4 position-relative overflow-hidden text-white">
+                                <div class="background">
+                                    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F2254F74954D4C8D302785D" alt="">
+                                </div>
+                                <div class="card-header border-0 bg-none">
+                                    <div class="media">
+                                        <div class="media-body">
+                                        	<span class="ribbon-label2 text-truncate" style="max-width: 250px;">웃는 남자 VIP 2022-07-16(일)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center z-1 h-100px">
+
+                                </div>
+                                <div class="card-footer border-0 z-1">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h6 class="mb-1">웃는 남자</h6>
+                                            <p class="mb-0 text-mute small">2022-07-16(일) | VIP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="page-subtitle">💖 이달의 뮤즈</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <figure class="m-0 h-150 w-100 card position-relative overflow-hidden">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201312%2F20131206103506551.jpg" alt="">
+                                        </div>
+                                    </figure>
+                                </div>
+                                <div class="col align-self-center">
+                                    <p class="mb-2"><a href="#">💓 홍광호</a></p>
+                                    <p class="small text-mute" style="max-width: 220px;">
+                                    	대한민국 남자 배우 가운데 노래로는 단연 탑이라고 부를 만하다. 물론 대한민국 뮤지컬계의 최상급 남자 배우들의 가창력에는 각자 장단점이 존재하기 때문에, 홍광호를 100% 1순위로 올려놓는 데는 이견이 다수 있을 수 있다. 하지만...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <figure class="m-0 h-150 w-100 card position-relative overflow-hidden">
+                                        <div class="background">
+                                            <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220602114232796.jpg" alt="">
+                                        </div>
+                                    </figure>
+                                </div>
+                                <div class="col align-self-center">
+                                    <p class="mb-2"><a href="#">💓 재민 NCT DREAM</a></p>
+                                    <p class="small text-mute">
+                                    	경인 아라뱃길에서 봉사활동을 하다가 SM에 캐스팅되었다. 처음엔 보험 회사인 줄 알고 도망쳤으나, SM이라는 회사가 어떤 회사인지 어머니께 여쭤보니 좋은 곳이라고 하여 캐스팅되었다는 후문. 그 덕에 봉캐남이라는 별명을 얻었다...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        		
+        	</div><!--end:home-->
+        	
+        </div><!--end:myTabContent-->
+    	
+    	
+    	<!-- Page laoder -->
+	    <div class="container-fluid pageloader">
+	        <div class="row h-100">
+	            <div class="col-12 align-self-start text-center">
+	            </div>
+	            <div class="col-12 align-self-center text-center">
+	                <div class="loader-logo">
+	                    <div class="logo">*<span>T</span><span>M</span>
+	                        <div class="loader-roller">
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                            <div></div>
+	                        </div>
+	                    </div>
+	                    <h4 class="logo-text"><span>티켓<br>마요</span><small>콘서트, 뮤지컬 매니아를 위한 커뮤니티</small></h4>
+	                </div>
+	            </div>
+	            <div class="col-12 align-self-end text-center">
+	                <p class="my-5">데이터 불러오는 중<br><small class="text-mute">잠시만 기다려주세요...</small></p>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- Page laoder ends -->
+    	   
+    </main>
+    <!-- End of page content -->
+	
+	<!-- Swiper slider  -->
+    <script src="/assets/vendor/swiper/js/swiper.min.js"></script>
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        /* Swiper slider */
+        var swiper = new Swiper('.swiper-stories', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            pagination: false,
+        });
+	});
+	</script>
+	
+</th:block>
+</html>

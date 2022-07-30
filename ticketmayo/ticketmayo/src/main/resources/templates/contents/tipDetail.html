@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="tipDetailFragment">
+	<style>
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+		
+		<div class="container-fluid h-300 position-relative overflow-hidden">
+            <div class="background" style="background-color: rgba(97, 33, 210, 0.4)">
+                <img src="https://www.sejongpac.or.kr/static/portal/img/hall/t/l.jpg" alt="" style="display: none;">
+            </div>
+        </div>
+        
+        <div class="container mb-4 top-100">
+            <div class="card border-0 shadow-light mb-4">
+                <div class="card-body position-relative">
+                    
+                    <h4 class="text-default">세종문화회관 대극장</h4>
+                    <p class="mb-1">서울특별시 종로구 세종대로 175 (세종로)</p>
+                    <p class="text-mute small"><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span> 125 reviews</p>
+                    <div class="row mb-4"></div>
+                    <ul class="nav nav-tabs nav-fill justift-content-center mb-4" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Review</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade was-validated active show" id="details" role="tabpanel" aria-labelledby="details-tab">
+                            <h5 class="subtitle">Product Information</h5>
+                            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Praesent id eros in eros placerat varius sit amet vitae quam. Nullam at nibh hendrerit, 
+                            fermentum mauris in, rutrum tellus. Sed rutrum congue nisl, id luctus turpis lobortis et. 
+                            <br><br>
+                            <img src="http://story175.sejongpac.or.kr/wp-content/uploads/2020/09/00%EC%83%81%EB%8B%A8-6.jpg" class="w-100">
+                            <br><br>
+                            Quisque iaculis viverra nunc in vestibulum. Fusce tristique orci turpis. In gravida gravida gravida. Etiam at gravida sapien. Cras commodo, sapien sit amet hendrerit elementum, diam purus rhoncus justo, et porta tellus massa nec justo. Quisque luctus risus id est commodo varius.
+                            <br><br>
+                            <img src="https://www.sejongpac.or.kr/static/portal/img/hall/t/l.jpg" class="w-100">
+                            </p>
+                            <p class="">Nunc sit amet magna auctor massa pulvinar commodo ac non neque. Vivamus cursus commodo dolor placerat sagittis. Sed laoreet efficitur nisl, viverra consectetur diam venenatis mollis. Suspendisse nec nunc eget elit tempus consectetur. Pellentesque congue a magna et rutrum. In euismod sed ante non porta. Nunc vel mi et metus gravida malesuada. Nam sollicitudin semper tortor, id faucibus arcu interdum eget.</p>
+                        </div>
+                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            <div class="card mb-4">
+                                <div class="card-header border-0">
+                                    <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <figure class="avatar avatar-40 mr-2">
+                                            <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                        </figure>
+                                        <div class="media-body">
+                                            <h6 class="mb-1">sor***@naver.com</h6>
+                                            <p class="text-mute small">
+                                                김** <span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span> 5.0 </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="card-header border-0">
+                                    <p>"Working with John is awesome and we have done several project together. He will surely surprise what outcome will be delivered."</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <figure class="avatar avatar-40 mr-2">
+                                            <img src="/assets/img/user5.png" alt="Generic placeholder image">
+                                        </figure>
+                                        <div class="media-body">
+                                            <h6 class="mb-1">sor***@naver.com</h6>
+                                            <p class="text-mute small">
+                                                김** | <span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span> 4.5 </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="card-body p-0">
+                                    <textarea class="form-control border-0" rows="3" placeholder="Enter your feedback..."></textarea>
+                                </div>
+                                <div class="card-footer">
+                                    <h5><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span><span class="text-warning icon_star"></span></h5>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="media">
+                                        <figure class="avatar avatar-40 mr-2">
+                                            <img src="/assets/img/user1.png" alt="Generic placeholder image">
+                                        </figure>
+                                        <div class="media-body">
+                                            <h6 class="mb-1">sor***@naver.com</h6>
+                                            <p class="text-mute small">김**</p>
+                                        </div>
+                                        <button class="btn btn-44 btn-default" type="button"><i class="material-icons">send</i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		      	        
+    </main>
+    <!-- End of page content -->
+	
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        
+	});
+	</script>
+	
+</th:block>
+</html>

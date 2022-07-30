@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+	<!-- HEAD -->
+	<th:block th:replace="fragments/common/head :: headFragment"></th:block>
+	
+	<body class="ui-rounded">								
+		<!-- Begin page content -->
+	    <main class="flex-shrink-0 main-container">
+	        <!-- page content goes here -->
+	        <div class="banner-hero vh-100 scroll-y bg-default">
+	            <div class="background opacity-20" >
+	                <img src="assets/img/loginImg.jpg" alt="">
+	            </div>
+	            <div class="container h-100 text-white">
+	                <div class="row h-100 h-sm-auto">
+	                    <div class="col-12 col-md-8 col-lg-5 col-xl-4 mx-auto align-self-center text-center">
+	                        <h5 class="font-weight-light mb-3 text-mute">어서오세요 :D</h5>
+	                        <h3 class="font-weight-normal mb-4">로그인</h3>
+	
+	                        <div class="mb-4">
+	                        	<!--begin::Naver link-->
+	                            <a href="/oauth2/authorization/naver" class=" btn btn-lg btn-light text-default default-shadow btn-block">
+	                            	<img class="avatar avatar-40 mr-2" alt="Logo" src="/assets/img/naver/btnG_iconSq.png"/> 
+	                            	<span class="m-1">네이버 아이디로 로그인</span>
+	                            	<span class="ml-2 icon arrow_right"></span>
+	                            </a>
+	                            <!--end::Naver link-->
+	                        </div>
+	                        <div class="mb-4">
+	                            <p>회원가입 없이!<br>네이버 계정으로 서비스를 이용하세요.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </main>
+	    <!-- End of page content -->					
+	</body>	
+	<script>
+	$(document).ready(function(){
+		/* Background */
+	    $('.background').each(function () {
+	        var imgpath = $(this).find('img');
+	        $(this).css('background-image', 'url(' + imgpath.attr('src') + ')');
+	        imgpath.hide();
+	    });
+	});
+	</script>
+	
+</html>

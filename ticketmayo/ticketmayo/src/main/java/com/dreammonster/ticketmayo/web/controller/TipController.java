@@ -15,7 +15,15 @@ public class TipController {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "tip";
+		return "html/tip";
+	}
+	
+	@GetMapping("/tip/detail")
+	public String tipDetail(Model model, @LoginUser SessionUser naverUser) {
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
+		return "html/tipDetail";
 	}
 	
 }

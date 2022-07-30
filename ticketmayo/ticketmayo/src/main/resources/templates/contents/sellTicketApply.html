@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="sellTicketApplyFragment">
+	<style>
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+		
+		<div class="container-fluid h-300 position-relative overflow-hidden">
+            <div class="background" style="background-color: rgba(97, 33, 210, 0.4)">
+                <img src="http://tkfile.yes24.com/upload2/BoardNotice/202207/20220726/20220726-de541286-3de5-42a4-8de6-2c0c131f05a4.jpg" alt="" style="display: none;">
+            </div>
+        </div>
+        
+        <div class="container mb-4 top-100">
+            <div class="card border-0 shadow-light mb-4">
+                <div class="card-body position-relative">
+                    
+                    <h4 class="text-default">뮤지컬 [삼총사] 1차 티켓오픈 안내</h4>
+                    <p class="mb-1">2022.08.02(화) 오후 2:00</p>
+                    <div class="row mb-4"></div>
+                    <ul class="nav nav-tabs nav-fill justift-content-center mb-4" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">양도티켓 정보</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="details" role="tabpanel" aria-labelledby="details-tab">
+                            
+                            <div class="form-group ">
+				                <label>좌석 등급</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>좌석 정보1</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>좌석 정보2</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>좌석 정보3</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>날짜</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>시간</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>입금계좌</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>예금주</label>
+				                <input type="text" class="form-control" readonly value="test text...">
+				            </div>
+				            
+				            <div class="form-group ">
+				                <label>환불 계좌</label>
+				                <input type="text" class="form-control" value="">
+				            </div>
+				            
+				             <div class="form-group ">
+				                <label>연락처</label>
+				                <input type="text" class="form-control" value="">
+				            </div>
+                            
+                            <div class="mb-4">
+                            	<p>
+                            		안내사항<br>
+                            		1. 현재는 계좌이체만 가능합니다.<br>
+                            		2. 이체확인 후 담당자가 연락드립니다.<br>
+                            		3. 1시간 내 이체 미확인 시, 자동 취소 됩니다. <br><br>
+                            		* 디지털 티켓, 현장수령 등 티켓에 따라<br>
+                            		전달방법이 다르기 때문에 직접 연락드립니다.
+                            	</p>
+                        	</div>
+                            
+                            <div class="custom-control custom-checkbox">
+	                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+	                            <label class="custom-control-label" for="customCheck1">결제방법 동의</label>
+                            </div>
+                            
+                            <div class="col-12 col-md-12 text-center mt-4 mb-4">
+                            	<button type="button" class="mb-2 btn btn-rounded btn-light">취소</button>
+				            	<button type="button" class="mb-2 btn btn-rounded btn-default">계좌이체 완료</button>
+				            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- End of page content -->
+	
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        
+	});
+	</script>
+	
+</th:block>
+</html>

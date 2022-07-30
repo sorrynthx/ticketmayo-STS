@@ -47,7 +47,7 @@ public class SecurityConfig {
 			
 			.and()
 			.loginPage("/login")
-			.defaultSuccessUrl("/openWait");
+			.defaultSuccessUrl("/");
 		return http.build();
 	}
 	

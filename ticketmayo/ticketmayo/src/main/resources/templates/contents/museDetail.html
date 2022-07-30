@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="museDetailFragment">
+	<style>
+	iframe{
+	  width: 90vw;
+	  min-height: 400px;
+	}
+	.cursor-pointer {cursor: pointer;}
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+    	<div class="position-relative overflow-hidden h-200">
+            <div class="background" style="background-color: rgba(97, 33, 210, 0.4)">
+                <img src="/assets/img/museDetail.jpg" alt="" style="display: none;">
+            </div>
+    	</div>
+    	<div class="container top-100 text-center mb-4">
+            <figure class="avatar avatar-180 rounded-circle shadow  mx-auto">
+                <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201409%2F20140922203416508-3731873.jpg" alt="">
+            </figure>
+        </div>
+    	<div class="container-fluid text-center mb-4">
+            <h4>박효신</h4>
+            <p class="text-mute">가수</p>
+        </div>
+    	
+    	<div class="container mt-4">
+    		<div class="row">
+				<div class="col-6 col-md-4">
+	                <div class="card mb-4 position-relative overflow-hidden border-0 bg-default text-white cursor-pointer" id="blogBtn">
+	                    <div class="background opac" >
+	                        <img src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+	                    </div>
+	                    <div class="card-body h-100 text-center"></div>
+	                    <div class="card-footer border-0 z-1">
+	                        <div class="media">
+	                            <div class="media-body">
+	                                <h6 class="mb-1">블로그</h6>
+	                                <p class="mb-0 text-mute small h-20"></p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	            <div class="col-6 col-md-4">
+	                <div class="card mb-4 position-relative overflow-hidden border-0 bg-default text-white cursor-pointer" id="newsBtn">
+	                    <div class="background opac" >
+	                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+	                    </div>
+	                    <div class="card-body h-100 text-center "></div>
+	                    <div class="card-footer border-0 z-1">
+	                        <div class="media">
+	                            <div class="media-body">
+	                                <h6 class="mb-1">뉴스</h6>
+	                                <p class="mb-0 text-mute small h-20"></p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	            <div class="col-6 col-md-4">
+	                <div class="card mb-4 position-relative overflow-hidden border-0 bg-default text-white cursor-pointer" id="instagramBtn">
+	                    <div class="background opac" >
+	                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+	                    </div>
+	                    <div class="card-body h-100 text-center "></div>
+	                    <div class="card-footer border-0 z-1">
+	                        <div class="media">
+	                            <div class="media-body">
+	                                <h6 class="mb-1">인스타그램</h6>
+	                                <p class="mb-0 text-mute small h-20"></p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	            <div class="col-6 col-md-4">
+	                <div class="card mb-4 position-relative overflow-hidden border-0 bg-default text-white cursor-pointer" id="youtubeBtn">
+	                    <div class="background opac">
+	                        <img src="https://images.unsplash.com/photo-1541877944-ac82a091518a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+	                    </div>
+	                    <div class="card-body h-100 text-center "></div>
+	                    <div class="card-footer border-0 z-1">
+	                        <div class="media">
+	                            <div class="media-body">
+	                                <h6 class="mb-1">유튜브</h6>
+	                                <p class="mb-0 text-mute small h-20"></p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	    	</div>
+    	</div>
+    	
+    	<div class="container mt-4">
+    		<div class="row">
+				<div class="col-12 col-md-12">
+					<ul class="nav nav-pills nav-fill justift-content-center mb-4" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="true">댓글</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="content-tab" data-toggle="tab" href="#contents" role="tab" aria-controls="contents" aria-selected="false">콘텐츠</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade" id="contents" role="tabpanel" aria-labelledby="contents-tab">
+                        	
+                        	<div id="youtubeArea" style="display: none;">
+	                        	<div class="card-img p-0 mt-4 mb-4 text-center" >
+				                	<iframe
+							            id="ytplayer"
+							            type="text/html"
+							            src="https://www.youtube.com/embed/hcf5qYppzw0"
+							            frameborder="0"
+							            allowfullscreen="allowfullscreen"></iframe>
+				                </div>
+                        	</div>
+			                
+			                <div id="instagramArea" style="display: none;">
+				                <div class="card-img p-0 mt-4 mb-4">
+				                    <img src="/assets/img/hero6.jpg" alt="" class="w-100">
+				                </div>
+				                
+				                <div class="card-img p-0 mt-4 mb-4">
+			                    	<img src="/assets/img/hero6.jpg" alt="" class="w-100">
+			                	</div>
+			                </div>
+			                
+			                <div id="blogArea" style="display: none;">
+	                        	<div class="card mb-4">
+			                        <div class="card-header border-bottom">
+			                            <div class="media">
+			                            	<figure class="avatar avatar-40 mr-2">
+												<span class="fs-1" style="font-size: 0.1rem;">블로그</span>
+	                                		</figure>
+			                                <div class="media-body">
+			                                    <h6 class="mb-1">RULAF_</h6>
+			                                    <p class="mb-0 text-mute small">20220726</p>
+			                                </div>
+			                            </div>
+			                        </div>
+			                        <div class="card-body">
+			                            <p class="mb-0 text-mute">
+											신영숙 뮤지컬 너무 보고싶었는데 진짜 기대만발이었음 신영숙은 영상보단 무조건 라이브로 들어야되고 공연장에 있어야된다길래 총총 그리고 <b>박효신</b>은 못했지만 박강현이 있다! 잘생쁨 배우.. 1부 끝!...                            
+			                            </p>
+			                        </div>
+			                        <div class="card-footer border-top bg-light">
+			                            <p class="small"><b><a href="https://blog.naver.com/lule123" target="_blank">https://blog.naver.com/lule123</a></b></p>
+			                        </div>
+			                    </div>
+			                </div>
+                        	
+                        	<div id="newsArea" style="display: none;">
+	                        	<div class="card mb-4">
+			                        <div class="card-header border-bottom">
+			                            <div class="media">
+			                            	<figure class="avatar avatar-40 mr-2">
+												<span class="fs-1" style="font-size: 0.1rem;">뉴스</span>
+	                                		</figure>
+			                                <div class="media-body">
+			                                    <h6 class="mb-1">뮤지컬 최강 군단 다 모였다...<b>김준수</b>→양서윤 단체사진 공개</h6>
+			                                    <p class="mb-0 text-mute small">20220726</p>
+			                                </div>
+			                            </div>
+			                        </div>
+			                        <div class="card-body">
+			                            <p class="mb-0 text-mute">
+											가수 겸 뮤지컬 배우 <b>김준수</b>가 설립한 팜트리아일랜드 소속 배우들의 완전체 사진이 공개됐다. 26일 오전 팜트리아일랜드는 공식 SNS 채널들을 통해 대표 <b>김준수</b>를 비롯한 뮤지컬 배우 김소현, 정선아, 진태화, 서경수, 케이...                            
+			                            </p>
+			                        </div>
+			                        <div class="card-footer border-top bg-light">
+			                            <p class="small"><b><a href="https://n.news.naver.com/mnews/article/241/0003222183?sid=106" target="_blank">https://n.news.naver.com/mnews/article/241/0003222183?sid=106</a></b></p>
+			                        </div>
+			                    </div>
+                        	</div>
+                        </div>
+                        
+                        <div class="tab-pane fade show active" id="comment" role="tabpanel" aria-labelledby="comment-tab">
+                        	<div class="container my-4">
+			                    <div class="card">
+			                        <div class="card-body p-0">
+			                            <textarea class="form-control border-0" rows="2" placeholder="Write your post here..."></textarea>
+			                        </div>
+			                        <div class="card-footer py-2">
+			                            <div class="row">
+			                                <div class="col"></div>
+			                                <div class="col-auto align-self-center">
+			                                    <button class="btn btn-sm btn-default text-uppercase px-3"><span>등록</span> </button>
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="card mb-4 mt-4">
+			                        <div class="card-header border-bottom">
+			                            <div class="media">
+			                                <figure class="avatar avatar-40 mr-2">
+			                                    <img src="/assets/img/user5.png" alt="Generic placeholder image">
+			                                </figure>
+			                                <div class="media-body">
+			                                    <h6 class="mb-1">sor***@naver.com</h6>
+			                                    <p class="mb-0 text-mute small">2022-08-01</p>
+			                                </div>
+			                            </div>
+			                        </div>
+			                        <div class="card-body">
+			                            <p class="mb-0 text-mute">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet. </p>
+			                        </div>
+			                        <div class="card-footer border-top">
+			                            <div class="row">
+			                                <div class="col">
+			                                </div>
+			                                <div class="col-auto ">
+			                                    <button class="btn btn-link btn-sm px-2">
+			                                    	<i class="material-icons text-danger">favorite_border</i> 
+			                                    	<!-- <i class="material-icons text-danger">favorite_border</i> -->
+			                                    	<span class="d-none d-sm-inline-block">Like</span>
+			                                    </button>
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    
+			                </div>
+                        </div>
+                    </div>
+                    
+				</div>
+    		</div>
+    	</div>
+    	
+    </main>
+    <!-- End of page content -->
+	
+	<!-- Swiper slider  -->
+    <script src="/assets/vendor/swiper/js/swiper.min.js"></script>
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        /* Swiper slider */
+        var swiper = new Swiper('.swiper-stories', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            pagination: false,
+        });
+        
+        const museDetail = {
+			init: function (){
+				$('#blogBtn').on('click', function(){
+					console.log('blog');
+					$('#blogArea').show();
+					$('#newsArea').hide();
+					$('#instagramArea').hide();
+					$('#youtubeArea').hide();
+					$('#content-tab').click();
+				});	
+				$('#newsBtn').on('click', function(){
+					console.log('news');
+					$('#blogArea').hide();
+					$('#newsArea').show();
+					$('#instagramArea').hide();
+					$('#youtubeArea').hide();
+					$('#content-tab').click();
+				});
+				$('#instagramBtn').on('click', function(){
+					console.log('instagram');
+					$('#blogArea').hide();
+					$('#newsArea').hide();
+					$('#instagramArea').show();
+					$('#youtubeArea').hide();
+					$('#content-tab').click();
+				});
+				$('#youtubeBtn').on('click', function(){
+					console.log('youtube');
+					$('#blogArea').hide();
+					$('#newsArea').hide();
+					$('#instagramArea').hide();
+					$('#youtubeArea').show();
+					$('#content-tab').click();
+				});
+			}
+		}
+        museDetail.init();
+	});
+	</script>
+	
+</th:block>
+</html>

@@ -15,7 +15,14 @@ public class MuseController {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "muse";
+		return "html/muse";
 	}
 	
+	@GetMapping("/muse/detail")
+	public String museDetail(Model model, @LoginUser SessionUser naverUser) {
+		if (naverUser != null) {
+			model.addAttribute("naverUser", naverUser);
+		}
+		return "html/museDetail";
+	}
 }

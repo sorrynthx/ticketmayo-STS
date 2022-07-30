@@ -1,9 +1,6 @@
 package com.dreammonster.ticketmayo.web.dto;
 
-import javax.persistence.Column;
-
 import com.dreammonster.ticketmayo.domain.faq.Faq;
-import com.dreammonster.ticketmayo.domain.openWait.OpenWait;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,96 +1,73 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<th:block th:fragment="footerFragment">
-		<!--begin::Footer-->
-		<div id="kt_app_footer" class="app-footer">
-			<!--begin::Footer container-->
-			<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-				<!--begin::Copyright-->
-				<div class="text-dark order-2 order-md-1">
-					<span class="text-muted fw-bold me-1">2022©</span>
-					<a href="javascript:void(0);" target="_blank" class="text-gray-800 text-hover-primary">TicketMayo</a>
-				</div>
-				<!--end::Copyright-->
-				<!--begin::Menu-->
-				<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
-					<li class="menu-item">
-						<a href="javascript:void(0);" target="_blank" class="menu-link px-2">제휴</a>
-					</li>
-					<li class="menu-item">
-						<a href="javascript:void(0);" target="_blank" class="menu-link px-2">문의</a>
-					</li>
-				</ul>
-				<!--end::Menu-->
-			</div>
-			<!--end::Footer container-->
-		</div>
-		<!--end::Footer-->
+<th:block th:fragment="footerFragment">
+
+	<!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container section-100">
+            <h1>티켓<span>마요</span><span></span></h1>
+            <p class="text-mute mt-4">콘서트, 뮤지컬 매니아를 위한 커뮤니티<br>다양한 공연 정보와 이슈를 한 눈에 확인 하세요.</p>
+        </div>
+        <hr class="mt-0">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-auto  text-center">
+                   Copyright © 티켓마요 Team. All rights reserved.
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">Copyright © 티켓마요 Team. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer ends -->
+
+	<!-- sticky footer tabs -->
+	<div class="footer-tabs border-top text-center">
+	    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+	        <li class="nav-item">
+	            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+	                <i class="material-icons">home</i>
+	                <small class="sr-only">Home</small>
+	            </a>
+	        </li>
+	        <li class="nav-item">
+	            <a class="nav-link" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="search" aria-selected="false">
+	                <i class="material-icons">search</i>
+	                <small class="sr-only">search</small>
+	            </a>
+	        </li>
+	        <li class="nav-item">
+	            <a class="nav-link" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="false">
+	                <i class="material-icons">chat_bubble_outline</i>
+	                <small class="sr-only">chat</small>
+	            </a>
+	        </li>
+	        <li class="nav-item">
+	            <a class="nav-link" id="favorite-tab" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">
+	                <i class="material-icons">favorite_border</i>
+	                <small class="sr-only">favorite</small>
+	            </a>
+	        </li>
+	        <li class="nav-item">
+	            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+	                <i class="material-icons">person</i>
+	                <small class="sr-only">Profile</small>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	<!-- sticky footer tabs ends -->
+	
+	<!-- scroll to top button -->
+    <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44"><span class="arrow_carrot-up"></span></button>
+    <!-- scroll to top button ends-->
+	
+	
+<!-- script -->
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript">
+   		
+</script>
 		
-		<!-- script -->
-	    <script type="text/javascript">
-	    	if (typeof jQuery == 'undefined') {
-	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
-	      	}
-	      		    
-	    	/* active link url */
-			const url = window.location.pathname;	   		
-	   		
-	   		$('.menu-link').each(function () {
-	   	   		var currUrl = $(this).attr('href');
-	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
-	   	   	});
-	   		
-	   		/* top title description */
-	   		switch (url) {
-		    case '/openWait' :
-		      	$('#topTitle').text('오픈예정 티켓');
-		      	$('#topDescription').text('이번 주 오픈 티켓 확인!');
-		      	break;
-		    case '/openWaitBuyMusical' :
-		      	$('#topTitle').text('오픈예정 티켓 신청');
-		      	$('#topDescription').text('간편하게 티켓팅 신청');
-		      	break;
-		    case '/openWaitInvoice' :
-		      	$('#topTitle').text('오픈예정 티켓 신청 결과');
-		      	$('#topDescription').text('티켓팅 신청 결과 입니다.');
-		      	break; 
-		    case '/secondTicket' :
-		    	$('#topTitle').text('양도티켓 판매');
-			  	$('#topDescription').text('양도된 티켓을 빠르게 구매!');
-		      break;
-		    case '/secondTicketPayment' :
-		    	$('#topTitle').text('양도티켓 구매');
-			  	$('#topDescription').text('양도티켓 구매 진행중...');
-		      break; 
-		    case '/tip' :
-		    	$('#topTitle').text('뮤지컬 팁 게시판');
-			  	$('#topDescription').text('뮤지컬 관람 시, 필요한 꿀팁 소개!');
-		      break;
-		    case '/muse' :
-		    	$('#topTitle').text('뮤즈 게시판');
-			  	$('#topDescription').text('좋아하는 뮤즈 소식을 확인!');
-		      break;
-		    case '/community' :
-		    	$('#topTitle').text('유머 게시판');
-			  	$('#topDescription').text('인터넷에서 이슈인 다양한 글을 확인!');
-		      break;
-		    case '/notice' :
-		    	$('#topTitle').text('공지사항');
-			  	$('#topDescription').text('티켓마요 공지사항 안내!');
-		      break; 
-		    case '/faq' :
-		    	$('#topTitle').text('자주 찾는 질문');
-			  	$('#topDescription').text('많이 물어보는 질문!');
-		      break;
-		    case '/myInfo' :
-		    	$('#topTitle').text('프로필');
-			  	$('#topDescription').text('');
-		      break;
-		    default :
-		      break;
-		  	}
-	   		
-	    </script>
-		
-	</th:block>
+</th:block>
 </html>

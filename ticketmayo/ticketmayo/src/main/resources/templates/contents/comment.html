@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="commentFragment">
+	<style>
+	.cursor-pointer {cursor: pointer !important;}
+	.deleteIcon {
+    	position: absolute;
+    	right: 0;
+    	padding: 3px;
+	}
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+		<!-- page content goes here -->       
+        <div class="container mt-4">
+        	<h5 class="page-subtitle">👏 공연 후기!</h5>
+        </div>	
+        
+        <div class="container mt-4">
+        	<div class="card">
+                <div class="card-body p-0">
+                    <textarea class="form-control border-0" rows="2" placeholder="Write your post here..."></textarea>
+                </div>
+                <div class="card-footer py-2">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-auto align-self-center">
+                            <button class="btn btn-sm btn-default text-uppercase px-3"><span>등록</span> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mt-4">
+        	<div class="card mb-4">
+                <div class="card-header border-bottom">
+                    <div class="media">
+                        <figure class="avatar avatar-40 mr-2">
+                            <img src="assets/img/user5.png" alt="Generic placeholder image">
+                        </figure>
+                        <div class="media-body">
+                            <h6 class="mb-1">sor***@naver.com</h6>
+                            <p class="mb-0 text-mute small">2022-08-15</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0 text-mute">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet. </p>
+                </div>
+                <div class="card-img p-0">
+                    <img src="https://blog.kakaocdn.net/dn/nRJ7q/btrBzVh44Ip/opBggidKDlquI1gvEL8ke0/img.jpg" alt="" class="w-100">
+                </div>
+                <div class="card-footer border-top bg-light">
+                    <p class="small"><b>250</b> Likes, <b>50</b> Comments, </p>
+                </div>
+                <div class="card-footer border-top">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-link btn-sm px-2" data-toggle="modal" data-target="#exampleModalScrollable">
+                            	<i class="material-icons text-warning">chat</i> 
+                            	<span class="d-none d-sm-inline-block">댓글</span>
+                            </button>
+                        </div>
+                        <div class="col-auto ">
+                            <button class="btn btn-link btn-sm px-2"><i class="material-icons text-danger">favorite_border</i> <span class="d-none d-sm-inline-block">좋아요</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header border-bottom">
+                    <div class="media">
+                        <figure class="avatar avatar-40 mr-2">
+                            <img src="assets/img/user5.png" alt="Generic placeholder image">
+                        </figure>
+                        <div class="media-body">
+                            <h6 class="mb-1">sor***@naver.com</h6>
+                            <p class="mb-0 text-mute small">2022-08-15</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0 text-mute">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet. </p>
+                </div>
+                <div class="card-img p-0">
+                    <img src="assets/img/hero6.jpg" alt="" class="w-100">
+                </div>
+                <div class="card-footer border-top bg-light">
+                    <p class="small"><b>250</b> Likes, <b>50</b> Comments, </p>
+                </div>
+                <div class="card-footer border-top">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-link btn-sm px-2" data-toggle="modal" data-target="#exampleModalScrollable">
+                            	<i class="material-icons text-warning">chat</i> 
+                            	<span class="d-none d-sm-inline-block">댓글</span>
+                            </button>
+                        </div>
+                        <div class="col-auto ">
+                            <button class="btn btn-link btn-sm px-2"><i class="material-icons text-danger">favorite_border</i> <span class="d-none d-sm-inline-block">좋아요 </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="col-12 col-md-12 text-center mt-4 mb-4">
+        	<button type="button" class="mb-2 btn btn-rounded btn-outline-default">더 보기</button>
+        </div>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">💬 댓글</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="card mb-4">
+			                <div class="card-body p-0">
+			                    <textarea class="form-control border-0" rows="2" placeholder="Write your post here..."></textarea>
+			                </div>
+			                <div class="card-footer py-2">
+			                    <div class="row">
+			                        <div class="col"></div>
+			                        <div class="col-auto align-self-center">
+			                            <button class="btn btn-sm btn-default text-uppercase px-3"><span>등록</span> </button>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+                        
+                        <div class="card mb-4">
+                        	<span class="material-icons text-danger deleteIcon cursor-pointer">delete</span>
+                            <div class="card-header border-0">
+                                <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <figure class="avatar avatar-40 mr-2">
+                                        <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                    </figure>
+                                    <div class="media-body">
+                                        <h6 class="mb-1">sor***@naver.com</h6>
+                                        <p class="text-mute small">김** </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                        	<span class="material-icons text-danger deleteIcon cursor-pointer">delete</span>
+                            <div class="card-header border-0">
+                                <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <figure class="avatar avatar-40 mr-2">
+                                        <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                    </figure>
+                                    <div class="media-body">
+                                        <h6 class="mb-1">sor***@naver.com</h6>
+                                        <p class="text-mute small">김** </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     	<div class="card mb-4">
+                     		<span class="material-icons text-danger deleteIcon cursor-pointer">delete</span>
+                            <div class="card-header border-0">
+                                <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <figure class="avatar avatar-40 mr-2">
+                                        <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                    </figure>
+                                    <div class="media-body">
+                                        <h6 class="mb-1">sor***@naver.com</h6>
+                                        <p class="text-mute small">김** </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       	<div class="card mb-4">
+                       		<span class="material-icons text-danger deleteIcon cursor-pointer">delete</span>
+                            <div class="card-header border-0">
+                                <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <figure class="avatar avatar-40 mr-2">
+                                        <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                    </figure>
+                                    <div class="media-body">
+                                        <h6 class="mb-1">sor***@naver.com</h6>
+                                        <p class="text-mute small">김** </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                        	<span class="material-icons text-danger deleteIcon cursor-pointer">delete</span>
+                            <div class="card-header border-0">
+                                <p>"Best product item and taste very fast and excellent packaging I am loving it. Thats awesome set for packaging with sppon and fork."</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="media">
+                                    <figure class="avatar avatar-40 mr-2">
+                                        <img src="/assets/img/user3.png" alt="Generic placeholder image">
+                                    </figure>
+                                    <div class="media-body">
+                                        <h6 class="mb-1">sor***@naver.com</h6>
+                                        <p class="text-mute small">김** </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       	
+                       	<div class="col-12 col-md-12 text-center mt-4 mb-4">
+				        	<button type="button" class="mb-2 btn btn-rounded btn-outline-default">더 보기</button>
+				        </div>
+                       	
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+    </main>
+    <!-- End of page content -->
+	
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        
+	});
+	</script>
+	
+</th:block>
+</html>

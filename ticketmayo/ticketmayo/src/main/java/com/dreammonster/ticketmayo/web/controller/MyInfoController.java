@@ -22,7 +22,7 @@ public class MyInfoController {
 			model.addAttribute("naverUser", naverUser);
 		}
 		
-		return "myInfo";
+		return "html/myInfo";
 	}
 	
 }

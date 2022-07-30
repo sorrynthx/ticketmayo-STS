@@ -15,7 +15,7 @@ public class HumorController {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "humor";
+		return "html/humor";
 	}
 
 }

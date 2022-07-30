@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="sellTicketFragment">
+	<style>
+	.ribbon-label {
+		right: -5px;
+		border-top-left-radius: 0.95rem;
+    	border-bottom-left-radius: 0.95rem;
+    	display: flex;
+	    justify-content: left;
+	    align-items: center;
+	    padding: 5px 10px;
+	    position: absolute;
+	    z-index: 1;
+	    background-color: #6121D2D9;
+	    box-shadow: 0px -1px 5px 0px rgb(0 0 0 / 10%);
+	    color: #FFFFFF;
+	    top: 10%;
+	    right: 0;
+	    transform: translateX(5px) translateY(-50%);
+	}
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+         <div class="container mt-3">
+	        <h5 class="page-subtitle">♻️ &nbsp;양도티켓</h5>
+	        <div class="row">
+	        	
+	        	<div class="col-12 col-md-6">
+                    <div class="card  border-0 shadow-light mb-4">
+                        <div class="card-body position-relative">
+                            <div class="media">
+                                <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="Generic placeholder image" class="avatar-100 mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-1">웃는남자</h6>
+                                    <p class="small text-mute mb-0">VIP A블럭 D열 12번</p>
+                                    <p class="small text-mute">2022-08-16 19:30 공연</p>
+                                </div>
+                                <div class="text-right"><p class="small text-mute">19:30<br>2022-08-01</p></div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="mb-1">150,000원</h6>
+                                    <p class="small text-mute">1장</p>
+                                </div>
+                                <div class="col-auto">
+                                	<button class="btn btn-default" onclick="javascript:location.href='/sellTicket/apply'">구매</button>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="card  border-0 shadow-light mb-4">
+                        <div class="card-body position-relative">
+                            <div class="media">
+                                <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="Generic placeholder image" class="avatar-100 mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-1">웃는남자</h6>
+                                    <p class="small text-mute mb-0">VIP A블럭 D열 12번</p>
+                                    <p class="small text-mute">2022-08-16 19:30 공연</p>
+                                </div>
+                                <div class="text-right"><p class="small text-mute">19:30<br>2022-08-01</p></div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="mb-1">150,000원</h6>
+                                    <p class="small text-mute">1장</p>
+                                </div>
+                                <div class="col-auto">
+                                	<button class="btn btn-warning" onclick="javascript:alert('현재 다른 회원이 구매중입니다.');">거래중</button>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="card  border-0 shadow-light mb-4">
+                        <div class="card-body position-relative">
+                            <div class="media">
+                                <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="Generic placeholder image" class="avatar-100 mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-1">웃는남자</h6>
+                                    <p class="small text-mute mb-0">VIP A블럭 D열 12번</p>
+                                    <p class="small text-mute">2022-08-16 19:30 공연</p>
+                                </div>
+                                <div class="text-right"><p class="small text-mute">19:30<br>2022-08-01</p></div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="mb-1">150,000원</h6>
+                                    <p class="small text-mute">1장</p>
+                                </div>
+                                <div class="col-auto">
+                                	<button class="btn btn-default" onclick="javascript:location.href='/sellTicket/apply'">구매</button>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="card  border-0 shadow-light mb-4">
+                        <div class="card-body position-relative">
+                            <div class="media">
+                                <img src="https://search.pstatic.net/common?type=o&size=174x242&quality=75&direct=true&src=https%3A%2F%2Fcsearch-phinf.pstatic.net%2F20220509_97%2F1652066010588IJ3Xl_JPEG%2F269_image_url_1652066010574.jpg" alt="Generic placeholder image" class="avatar-100 mr-3">
+                                <div class="media-body">
+                                    <h6 class="mb-1">웃는남자</h6>
+                                    <p class="small text-mute mb-0">VIP A블럭 D열 12번</p>
+                                    <p class="small text-mute">2022-08-16 19:30 공연</p>
+                                </div>
+                                <div class="text-right"><p class="small text-mute">19:30<br>2022-08-01</p></div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 class="mb-1">150,000원</h6>
+                                    <p class="small text-mute">1장</p>
+                                </div>
+                                <div class="col-auto">
+                                	<button class="btn btn-danger" onclick="javascript:alert('판매완료된 티켓입니다.');">판매완료</button>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	        
+	        </div>
+         </div>
+    </main>
+    <!-- End of page content -->
+	
+	<script>
+	"use strict"
+	$(document).ready(function(){
+        
+	});
+	</script>
+	
+</th:block>
+</html>

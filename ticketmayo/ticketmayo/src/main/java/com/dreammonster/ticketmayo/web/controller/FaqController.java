@@ -30,7 +30,7 @@ public class FaqController {
 		if (naverUser != null) {
 			model.addAttribute("naverUser", naverUser);
 		}
-		return "faq";
+		return "html/faq";
 	}
 	
 	@ResponseBody

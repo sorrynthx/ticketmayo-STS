@@ -1,341 +1,255 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <th:block th:fragment="museFragment">
-	<!--begin::Content container-->
-	<div id="kt_app_content_container" class="app-container container-fluid">
-
-		<div class="card mb-5 mb-xxl-8">
-			<div class="card-body pt-9 pb-0">
-				<!--begin::Details-->
-				<div class="d-flex flex-wrap flex-sm-nowrap mb-6">
-					<!--begin: Pic-->
-					<div class="me-7 mb-4">
-						<div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-							<img src="https://w.namu.la/s/61c27bb7dcfe58d07a274152b59de79d1a67a7dc14b184b2eead6353cb8c7e12000fe9dab28f72f56af2d52a4cdcbcc9641ea2274262123acbeb6bce460905fa13010f8f0a47eb7cbe6c6222775c174b2577c2203ac7e1f50ae7489beddb0189"
-								alt="image">
-						</div>
-					</div>
-					<!--end::Pic-->
-					<!--begin::Info-->
-					<div class="flex-grow-1">
-						<!--begin::Title-->
-						<div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-							<!--begin::User-->
-							<div class="d-flex flex-column">
-								<div class="d-flex align-items-center mb-2">
-									<a href="#" class="text-gray-800 text-hover-primary fs-2 fw-bolder me-1">박효신</a>
-									<a href="#">
-										<!--begin::Svg Icon | path: icons/duotune/general/gen026.svg-->
-										<span class="svg-icon svg-icon-1 svg-icon-primary">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-												viewBox="0 0 24 24">
-												<path
-													d="M10.0813 3.7242C10.8849 2.16438 13.1151 2.16438 13.9187 3.7242V3.7242C14.4016 4.66147 15.4909 5.1127 16.4951 4.79139V4.79139C18.1663 4.25668 19.7433 5.83365 19.2086 7.50485V7.50485C18.8873 8.50905 19.3385 9.59842 20.2758 10.0813V10.0813C21.8356 10.8849 21.8356 13.1151 20.2758 13.9187V13.9187C19.3385 14.4016 18.8873 15.491 19.2086 16.4951V16.4951C19.7433 18.1663 18.1663 19.7433 16.4951 19.2086V19.2086C15.491 18.8873 14.4016 19.3385 13.9187 20.2758V20.2758C13.1151 21.8356 10.8849 21.8356 10.0813 20.2758V20.2758C9.59842 19.3385 8.50905 18.8873 7.50485 19.2086V19.2086C5.83365 19.7433 4.25668 18.1663 4.79139 16.4951V16.4951C5.1127 15.491 4.66147 14.4016 3.7242 13.9187V13.9187C2.16438 13.1151 2.16438 10.8849 3.7242 10.0813V10.0813C4.66147 9.59842 5.1127 8.50905 4.79139 7.50485V7.50485C4.25668 5.83365 5.83365 4.25668 7.50485 4.79139V4.79139C8.50905 5.1127 9.59842 4.66147 10.0813 3.7242V3.7242Z"
-													fill="currentColor"></path>
-												<path
-													d="M14.8563 9.1903C15.0606 8.94984 15.3771 8.9385 15.6175 9.14289C15.858 9.34728 15.8229 9.66433 15.6185 9.9048L11.863 14.6558C11.6554 14.9001 11.2876 14.9258 11.048 14.7128L8.47656 12.4271C8.24068 12.2174 8.21944 11.8563 8.42911 11.6204C8.63877 11.3845 8.99996 11.3633 9.23583 11.5729L11.3706 13.4705L14.8563 9.1903Z"
-													fill="white"></path>
-											</svg>
-										</span>
-										<!--end::Svg Icon-->
-									</a>
-								</div>
-								<div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
-									<a href="#"
-										class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-										#가수
-									</a>
-									<a href="#"
-										class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-										#뮤지컬배우
-									</a>
-								</div>
-							</div>
-							<!--end::User-->
-							<!--begin::Actions-->
-							<div class="d-flex my-4">
-								<a href="#"
-									class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-									<i class="bi bi-instagram text-danger"></i>&nbsp;&nbsp;인스타그램
-								</a>
-							</div>
-							<!--end::Actions-->
-						</div>
-						<!--end::Title-->
-						<!--begin::Stats-->
-						<div class="d-flex flex-wrap justify-content-between">
-							<!--begin::Info-->
-							<div class="d-flex flex-column flex-grow-1 pe-8">
-								<div class="d-flex flex-wrap">
-									<div class="border border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-										<div class="fs-1 fw-bolder counted" data-kt-countup="true"
-											data-kt-countup-value="6,840" data-kt-countup-prefix="$">384K</div>
-										<div class="fw-bold fs-6 text-gray-400">팔로워</div>
-									</div>
-									<div class="border border-dashed rounded min-w-125px py-2 px-4 me-6 mb-3">
-										<div class="fs-1 fw-bolder counted" data-kt-countup="true"
-											data-kt-countup-value="179">1</div>
-										<div class="fw-bold fs-6 text-gray-400">랭킹</div>
-									</div>
-								</div>
-							</div>
-							<!--end::Info-->
-							<!--begin::Progress-->
-							<div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
-								<div class="d-flex justify-content-between w-100 mt-auto mb-2">
-									<span class="fw-bold fs-6 text-gray-400">종합 점수</span>
-									<span class="fw-bolder fs-6">100</span>
-								</div>
-								<div class="h-5px mx-3 w-100 bg-light rounded mb-3">
-									<div class="bg-primary rounded h-5px" role="progressbar" style="width: 100%;"
-										aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-							<!--end::Progress-->
-						</div>
-						<!--end::Stats-->
-					</div>
-					<!--end::Info-->
-				</div>
-				<!--end::Details-->
-				<div class="separator"></div>
-				<!--begin::Navs-->
-				<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
-
-					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5 active" data-bs-toggle="tab"
-							href="#newsTab">뉴스</a>
-					</li>
-
-					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
-							href="#blogTab">블로그</a>
-					</li>
-
-					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
-							href="#instagramTab">인스타그램</a>
-					</li>
-
-					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
-							href="#youtubeTab">유튜브</a>
-					</li>
-
-					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5" data-bs-toggle="tab"
-							href="#onelineTab">한줄평</a>
-					</li>
-
-				</ul>
-				<!--begin::Navs-->
-			</div>
-		</div>
-
-		<div class="tab-content">
-
-			<div class="row g-5 g-xxl-8">
-
-				<div class="col-xl-6">
-					<div class="tab-pane fade show active" id="newsTab" role="tabpanel">
-						<div class="card mb-5 mb-xxl-8">
-							<div class="card-body pb-0">
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center flex-grow-1">
-										<div class="d-flex flex-column">
-											<a href="#"
-												class="text-gray-800 text-hover-primary mb-1 fs-6 fw-bolder">Brad
-												Dennis</a>
-											<span class="text-gray-400 fw-bold">Yestarday at 5:06 PM</span>
-										</div>
-									</div>
-								</div>
-								<div class="pt-5">
-									<!--begin::Text-->
-									<p class="text-gray-800 fs-6 fw-normal mb-3">Outlines keep you honest. They stop you
-										from indulging in poorly thought-out metaphors about driving and keep you
-										focused on the overall structure of your post</p>
-								</div>
-							</div>
-							<!--end::Body-->
-						</div>
-
-						<div class="card mb-5 mb-xxl-8">
-							<div class="card-body pb-0">
-								<div class="d-flex align-items-center">
-									<div class="d-flex align-items-center flex-grow-1">
-										<div class="d-flex flex-column">
-											<a href="#"
-												class="text-gray-800 text-hover-primary mb-1 fs-6 fw-bolder">Brad
-												Dennis</a>
-											<span class="text-gray-400 fw-bold">Yestarday at 5:06 PM</span>
-										</div>
-									</div>
-								</div>
-								<div class="pt-5">
-									<!--begin::Text-->
-									<p class="text-gray-800 fs-6 fw-normal mb-3">Outlines keep you honest. They stop you
-										from indulging in poorly thought-out metaphors about driving and keep you
-										focused on the overall structure of your post</p>
-								</div>
-							</div>
-							<!--end::Body-->
-						</div>
-
-						<button class="btn btn-primary w-100 text-center" id="kt_widget_11_load_more_btn">
-							<span class="indicator-label">더 보기</span>
-						</button>
-					</div>
-
-					<div class="tab-pane fade" id="blogTab" role="tabpanel">
-						Blog
-					</div>
-
-					<div class="tab-pane fade" id="instagramTab" role="tabpanel">
-						Instagram
-					</div>
-
-					<div class="tab-pane fade" id="youtubeTab" role="tabpanel">
-						Youtube
-					</div>
-
-					<div class="tab-pane fade" id="onelineTab" role="tabpanel">
-						한줄평
-					</div>
-				</div>
-				<!-- end:col-xl-6 -->
-
-				<div class="col-xl-6">
-
-					<div class="card mb-5 mb-xxl-8">
-						<div class="card-body pb-0">
-							<div class="d-flex align-items-center">
-								<canvas id="kt_chartjs_5" class="mh-400px"></canvas>
-							</div>
-							<div class="text-center py-7">
-								<button type="button" class="btn btn-primary" id="">참여하기</button>
-							</div>
-						</div>
-						<!--end::Body-->
-					</div>
-					
-					
-					<div class="card">
-						<!--begin::Body-->
-						<div class="card-body pb-0">
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-column justify-content-between h-100">
-								<!--begin::Section-->
-								<div class="pt-12">
-									<!--begin::Title-->
-									<h3 class="text-dark text-center fs-1 fw-bolder line-height-lg">[스폰서 광고]
-									<br>광고자리 입니다.</h3>
-									<!--end::Title-->
-									<!--begin::Text-->
-									<div class="text-center text-gray-600 fs-5 fw-bold pt-4">다양한 광고를 기다리고 있습니다.
-									<br>--- Waiting... ---</div>
-									<!--end::Text-->
-									<!--begin::Action-->
-									<div class="text-center py-7">
-										<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">광고 신청</a>
-									</div>
-									<!--end::Action-->
-								</div>
-								<!--end::Section-->
-								<!--begin::Illustration-->
-								<div class="flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom min-h-125px h-sm-275px" style="background-image:url('assets/media/illustrations/free/waitAd1.svg');"></div>
-								<!--end::Illustration-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Body-->
-					</div>
-
-				</div>
-
-			</div><!-- row g-5 g-xxl-8 -->
-
-
-
-		</div>
-		<!-- end: tab-content -->
-
-
-
-
-	</div>
-	<!--end::Content container-->
+	<style>
+	
+	</style>
+	<!-- Begin page content -->
+    <main class="flex-shrink-0 main-container">
+		<!-- page content goes here -->       
+        <div class="container mt-4">
+        	<h5 class="page-subtitle">✨ 뮤즈</h5>
+        	<div class="row">
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                    	<a href="/muse/detail">
+	                    	<div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201409%2F20140922203416508-3731873.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">박효신</h6>
+	                                    <p class="mb-0 text-mute small">가수</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                    	<a href="/muse/detail">
+	                        <div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201312%2F20131206103506551.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">홍광호</h6>
+	                                    <p class="mb-0 text-mute small">뮤지컬 배우</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                    	</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                    	<a href="/muse/detail">
+	                        <div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202201%2F20220109133545653.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">김준수</h6>
+	                                    <p class="mb-0 text-mute small">가수</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                    	</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                        <a href="/muse/detail">
+	                        <div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220602114232796.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">재민(NCT DREAM)</h6>
+	                                    <p class="mb-0 text-mute small">가수</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                        <a href="/muse/detail">
+	                        <div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220608134249333.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">아이유</h6>
+	                                    <p class="mb-0 text-mute small">가수</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card mb-4">
+                        <a href="/muse/detail">
+	                        <div class="card-header h-200 text-center position-relative overflow-hidden">
+	                            <div class="background">
+	                                <img src="https://search.pstatic.net/common?type=b&size=144&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202206%2F20220602002828773.jpg" alt="">
+	                            </div>
+	                        </div>
+	                        <div class="card-footer border-0 z-1">
+	                            <div class="media">
+	                                <div class="media-body">
+	                                    <h6 class="mb-1">뷔(방탄소년단)</h6>
+	                                    <p class="mb-0 text-mute small">가수</p>
+	                                </div>
+	                            </div>
+	                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 text-center mt-4 mb-4">
+                	<button type="button" class="mb-2 btn btn-rounded btn-outline-default">더 보기</button>
+                </div>
+            </div>
+            
+        	<div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="card shadow-sm border-0 mb-3">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h6 class="text-default">좋아하는 뮤즈가 없나요??</h6>
+                                    <p class="text-mute">좋아하는 뮤즈 신청 👉👉👉 </p>
+                                </div>
+                                <button class="btn btn-default btn-44 shadow-sm">
+                                    <i class="material-icons">person_add</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        	
+        </div>
+        <!--end:container-->
+        
+        <div class="container mt-4">
+        	<h5 class="page-subtitle">🔥 깜짝 핫딜!</h5>
+        	<p class="text-mute">해당 쿠폰을 보여주시면 할인 받을 수 있어요 :D</p>
+	        <div class="swiper-container swiper-stories">
+	            <div class="swiper-wrapper">
+	            	<div class="swiper-slide w-auto px-2">
+                        <div class="card w-250 position-relative overflow-hidden bg-default text-white border-0">
+                            <div class="background opacity-60">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-body text-center z-1 h-50">
+                            	<h4 class="my-0 font-weight-bold">메가커피</h4>
+                            </div>
+                            <div class="card-footer border-0 z-1">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h6 class="mb-1">마포역점</h6>
+                                        <p>10% 할인 <span class="badge badge-success">OfferTX01</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide w-auto px-2">
+                        <div class="card w-250 position-relative overflow-hidden bg-default text-white border-0">
+                            <div class="background opacity-60">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-body text-center z-1 h-50">
+                            	<h4 class="my-0 font-weight-bold">AAA 돈코츠라멘</h4>
+                            </div>
+                            <div class="card-footer border-0 z-1">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h6 class="mb-1">마포역점</h6>
+                                        <p>10% 할인 <span class="badge badge-success">OfferTX01</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide w-auto px-2">
+                        <div class="card w-250 position-relative overflow-hidden bg-default text-white border-0">
+                            <div class="background opacity-60">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-body text-center z-1 h-50">
+                            	<h4 class="my-0 font-weight-bold">오늘도 마카롱</h4>
+                            </div>
+                            <div class="card-footer border-0 z-1">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h6 class="mb-1">마포역점</h6>
+                                        <p>10% 할인 <span class="badge badge-success">OfferTX01</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide w-auto px-2">
+                        <div class="card w-250 position-relative overflow-hidden bg-default text-white border-0">
+                            <div class="background opacity-60">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-body text-center z-1 h-50">
+                            	<h4 class="my-0 font-weight-bold">[광고 영역]</h4>
+                            </div>
+                            <div class="card-footer border-0 z-1">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h6 class="mb-1">광고 문의</h6>
+                                        <p><span class="badge badge-success">광고 신청하기 🚀 </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+	            </div>
+	        </div>
+        </div>
+        
+    </main>
+    <!-- End of page content -->
+	
+	<!-- Swiper slider  -->
+    <script src="/assets/vendor/swiper/js/swiper.min.js"></script>
 	<script>
-		$(document).ready(function () {
-			var ctx = document.getElementById('kt_chartjs_5');
-
-			// Define colors
-			var infoColor = KTUtil.getCssVariableValue('--bs-info');
-			var infoLightColor = KTUtil.getCssVariableValue('--bs-light-info');
-			var warningColor = KTUtil.getCssVariableValue('--bs-warning');
-			var warningLightColor = KTUtil.getCssVariableValue('--bs-light-warning');
-			var primaryColor = KTUtil.getCssVariableValue('--bs-primary');
-			var primaryLightColor = KTUtil.getCssVariableValue('--bs-light-primary');
-
-			// Define fonts
-			var fontFamily = KTUtil.getCssVariableValue('--bs-font-sans-serif');
-
-			// Chart labels
-			const labels = ['요소1', '요소2', '요소3', '요소4', '요소5', '요소6'];
-
-			// Chart data
-			const data = {
-				labels: labels,
-				datasets: [
-					 {
-                    	label: "종합 점수표",
-                    	data: [100,95,95,100,100,95],
-                    	backgroundColor: primaryLightColor,
-                    	borderColor: primaryColor,
-                	},
-    			]
-			};
-
-			// Chart config
-			const config = {
-				type: 'radar',
-				data: data,
-				options: {
-					plugins: {
-						title: {
-							display: false,
-						},
-						legend: {
-							labels: {
-								// This more specific font property overrides the global property
-								font: {
-									size: 15,
-									family: fontFamily
-								}
-							}
-						},
-					},
-					scale: {
-				      display: true,
-				      min: 0,
-				      max: 100,
-				      ticks: {
-				        showLabelBackdrop: false,
-				      },
-				    },
-					responsive: true,
-				},
-				defaults: {
-					global: {
-						defaultFont: fontFamily
-					}
-				}
-			};
-
-			// Init ChartJS -- for more info, please visit: https://www.chartjs.org/docs/latest/
-			var myChart = new Chart(ctx, config);
-		});
+	"use strict"
+	$(document).ready(function(){
+        /* Swiper slider */
+        var swiper = new Swiper('.swiper-stories', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            pagination: false,
+        });
+	});
 	</script>
+	
 </th:block>
-
 </html>
